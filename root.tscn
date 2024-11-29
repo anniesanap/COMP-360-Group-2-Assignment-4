@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=3 format=3 uid="uid://ljd2ods15laa"]
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ckitf"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wm7x0"]
+size = Vector2(20, 20)
+
+[node name="root" type="Node3D"]
+
+[node name="ground" type="StaticBody3D" parent="."]
+
+[node name="groundCollision" type="CollisionShape3D" parent="ground"]
+shape = SubResource("WorldBoundaryShape3D_ckitf")
+
+[node name="groundMesh" type="MeshInstance3D" parent="ground"]
+mesh = SubResource("PlaneMesh_wm7x0")
+skeleton = NodePath("../..")
