@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=10 format=3 uid="uid://ljd2ods15laa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxind"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,6 +22,15 @@ albedo_color = Color(0.408329, 0.408329, 0.408329, 1)
 material = SubResource("StandardMaterial3D_ovnxw")
 size = Vector2(20, 20)
 
+[sub_resource type="BoxMesh" id="BoxMesh_1nkyd"]
+size = Vector3(2, 1, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgmf0"]
+size = Vector3(2, 1, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bkhtn"]
+size = Vector3(0.7, 0.4, 0.7)
+
 [node name="root" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -39,3 +48,25 @@ shape = SubResource("WorldBoundaryShape3D_ckitf")
 [node name="groundMesh" type="MeshInstance3D" parent="ground"]
 mesh = SubResource("PlaneMesh_wm7x0")
 skeleton = NodePath("../..")
+
+[node name="table" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="tableMesh" type="MeshInstance3D" parent="table"]
+mesh = SubResource("BoxMesh_1nkyd")
+skeleton = NodePath("../..")
+
+[node name="tableCollision" type="CollisionShape3D" parent="table"]
+shape = SubResource("BoxShape3D_vgmf0")
+
+[node name="bowl1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -1)
+mesh = SubResource("BoxMesh_bkhtn")
+
+[node name="bowl2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+mesh = SubResource("BoxMesh_bkhtn")
+
+[node name="bowl3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 1)
+mesh = SubResource("BoxMesh_bkhtn")
