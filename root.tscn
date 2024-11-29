@@ -1,4 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=7 format=3 uid="uid://ljd2ods15laa"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxind"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_oee8t"]
+sky_material = SubResource("ProceduralSkyMaterial_fxind")
+
+[sub_resource type="Environment" id="Environment_j8u35"]
+background_mode = 2
+sky = SubResource("Sky_oee8t")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ckitf"]
 
@@ -10,6 +23,13 @@ material = SubResource("StandardMaterial3D_ovnxw")
 size = Vector2(20, 20)
 
 [node name="root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_j8u35")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
 
 [node name="ground" type="StaticBody3D" parent="."]
 
