@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=31 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
 [ext_resource type="Script" path="res://button_1.gd" id="2_xlyjr"]
@@ -514,7 +514,30 @@ _data = {
 height = 0.1
 radius = 0.1
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8stb0"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ub3f7"]
+material = SubResource("StandardMaterial3D_8stb0")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukct4"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rq8if"]
+material = SubResource("StandardMaterial3D_ukct4")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3cn7x"]
+albedo_color = Color(1, 0, 0, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_ha72p"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_3cn7x")
 top_radius = 0.1
 bottom_radius = 0.1
 height = 0.1
@@ -659,8 +682,8 @@ script = ExtResource("2_xlyjr")
 [node name="buttonCollision" type="CollisionShape3D" parent="button1"]
 shape = SubResource("CylinderShape3D_bahwf")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="button1"]
-mesh = SubResource("CylinderMesh_ha72p")
+[node name="buttonMesh" type="MeshInstance3D" parent="button1"]
+mesh = SubResource("CylinderMesh_ub3f7")
 
 [node name="button2" type="StaticBody3D" parent="." groups=["buttons"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.85, 0)
@@ -669,8 +692,8 @@ script = ExtResource("3_fgvdp")
 [node name="buttonCollision" type="CollisionShape3D" parent="button2"]
 shape = SubResource("CylinderShape3D_bahwf")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="button2"]
-mesh = SubResource("CylinderMesh_ha72p")
+[node name="buttonMesh" type="MeshInstance3D" parent="button2"]
+mesh = SubResource("CylinderMesh_rq8if")
 
 [node name="button3" type="StaticBody3D" parent="." groups=["buttons"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.85, 0.9)
@@ -679,5 +702,5 @@ script = ExtResource("4_tg4h8")
 [node name="buttonCollision" type="CollisionShape3D" parent="button3"]
 shape = SubResource("CylinderShape3D_bahwf")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="button3"]
+[node name="buttonMesh" type="MeshInstance3D" parent="button3"]
 mesh = SubResource("CylinderMesh_ha72p")
