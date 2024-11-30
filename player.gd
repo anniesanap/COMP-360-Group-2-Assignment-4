@@ -1,7 +1,12 @@
 extends CharacterBody3D
 
+@onready var camera = $playerCamera
+
 const SPEED = 4.0
 const JUMP_VELOCITY = 5.0
+
+func _ready() -> void:
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -22,3 +27,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		camera.rotation.x -= event.screen_relative.y * 0.002
+		camera.rotation.y -= event.screen_relative.x * 0.002
