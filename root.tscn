@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=23 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
 
@@ -507,6 +507,15 @@ _data = {
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k3m8v"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bahwf"]
+height = 0.1
+radius = 0.1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ha72p"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
 [node name="root" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -636,3 +645,12 @@ shape = SubResource("CapsuleShape3D_k3m8v")
 
 [node name="playerCamera" type="Camera3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="button1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.85, 0)
+
+[node name="buttonCollision" type="CollisionShape3D" parent="button1"]
+shape = SubResource("CylinderShape3D_bahwf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="button1"]
+mesh = SubResource("CylinderMesh_ha72p")

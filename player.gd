@@ -23,7 +23,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Allow mouse to leave window
 	elif event.is_action_pressed("escape"):
 		DisplayServer.mouse_set_mode(2 * 1 - (int(DisplayServer.mouse_get_mode())))
-	# Handle jump.
+	# Handle jump
 	elif Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	# Handle movement keys
