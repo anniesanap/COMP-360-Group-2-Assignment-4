@@ -32,7 +32,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		if raycast.get_collider() != null and collider.is_in_group("buttons"):
 			collider.press()
 	# Handle movement keys
-	else:
-		var movement = Input.get_vector("move_left", "move_right", "move_forward", "move_back").rotated(-camera.rotation.y)
-		velocity.x = -movement.y * SPEED
-		velocity.z = movement.x * SPEED
+	var movement = Input.get_vector("move_left", "move_right", "move_forward", "move_back").rotated(-camera.rotation.y)
+	velocity.x = -movement.y * SPEED
+	velocity.z = movement.x * SPEED
