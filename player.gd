@@ -32,3 +32,5 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		camera.rotation.x -= event.screen_relative.y * 0.002
 		camera.rotation.y -= event.screen_relative.x * 0.002
+	elif event.is_action_pressed("escape"):
+		DisplayServer.mouse_set_mode(2 * 1 - (int(DisplayServer.mouse_get_mode())))
