@@ -6,7 +6,7 @@ extends StaticBody3D
 @onready var material: StandardMaterial3D = $buttonMesh.mesh.material
 
 func press():
-	button_1_material.albedo_color = Color.RED
-	button_2_material.albedo_color = Color.RED
-	material.albedo_color = Color.GREEN
+	create_tween().tween_property(button_1_material, "albedo_color", Color.RED, 0.2)
+	create_tween().tween_property(button_2_material, "albedo_color", Color.RED, 0.2)
+	create_tween().tween_property(material, "albedo_color", Color.GREEN, 0.2)
 	create_tween().tween_property(arm, "rotation:y", 3 * PI / 4, 1).set_delay(0.5).set_trans(Tween.TRANS_SPRING)
