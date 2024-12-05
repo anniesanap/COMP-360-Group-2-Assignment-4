@@ -1,13 +1,11 @@
-[gd_scene load_steps=38 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=36 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://bowl_1.gd" id="1_30jcq"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
 [ext_resource type="Script" path="res://arm.gd" id="1_mq7hl"]
 [ext_resource type="Script" path="res://bowl_2.gd" id="2_6idk8"]
-[ext_resource type="Script" path="res://button_1.gd" id="2_xlyjr"]
-[ext_resource type="Script" path="res://button_2.gd" id="3_fgvdp"]
+[ext_resource type="Script" path="res://button.gd" id="2_xlyjr"]
 [ext_resource type="Script" path="res://bowl_3.gd" id="3_gaulo"]
-[ext_resource type="Script" path="res://button_3.gd" id="4_tg4h8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxind"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -713,6 +711,7 @@ target_position = Vector3(0, 0, -1.5)
 [node name="button1" type="StaticBody3D" parent="." groups=["bowls", "buttons"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.85, -0.9)
 script = ExtResource("2_xlyjr")
+arm_rotation = 0.785
 
 [node name="buttonCollision" type="CollisionShape3D" parent="button1"]
 shape = SubResource("CylinderShape3D_bahwf")
@@ -722,7 +721,7 @@ mesh = SubResource("CylinderMesh_ub3f7")
 
 [node name="button2" type="StaticBody3D" parent="." groups=["buttons"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.85, 0)
-script = ExtResource("3_fgvdp")
+script = ExtResource("2_xlyjr")
 
 [node name="buttonCollision" type="CollisionShape3D" parent="button2"]
 shape = SubResource("CylinderShape3D_bahwf")
@@ -732,7 +731,8 @@ mesh = SubResource("CylinderMesh_rq8if")
 
 [node name="button3" type="StaticBody3D" parent="." groups=["buttons"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.85, 0.9)
-script = ExtResource("4_tg4h8")
+script = ExtResource("2_xlyjr")
+arm_rotation = 2.356
 
 [node name="buttonCollision" type="CollisionShape3D" parent="button3"]
 shape = SubResource("CylinderShape3D_bahwf")
