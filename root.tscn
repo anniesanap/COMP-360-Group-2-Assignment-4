@@ -1,9 +1,12 @@
-[gd_scene load_steps=35 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=38 format=4 uid="uid://ljd2ods15laa"]
 
+[ext_resource type="Script" path="res://bowl_1.gd" id="1_30jcq"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
 [ext_resource type="Script" path="res://arm.gd" id="1_mq7hl"]
+[ext_resource type="Script" path="res://bowl_2.gd" id="2_6idk8"]
 [ext_resource type="Script" path="res://button_1.gd" id="2_xlyjr"]
 [ext_resource type="Script" path="res://button_2.gd" id="3_fgvdp"]
+[ext_resource type="Script" path="res://bowl_3.gd" id="3_gaulo"]
 [ext_resource type="Script" path="res://button_3.gd" id="4_tg4h8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxind"]
@@ -580,8 +583,9 @@ skeleton = NodePath("../..")
 [node name="tableCollision" type="CollisionShape3D" parent="table"]
 shape = SubResource("BoxShape3D_vgmf0")
 
-[node name="bowl1" type="StaticBody3D" parent="." groups=["bowls"]]
+[node name="bowl1" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, -0.9)
+script = ExtResource("1_30jcq")
 
 [node name="bowl1mesh" type="MeshInstance3D" parent="bowl1"]
 mesh = SubResource("BoxMesh_bkhtn")
@@ -590,8 +594,9 @@ skeleton = NodePath("../..")
 [node name="bowl1collision" type="CollisionShape3D" parent="bowl1"]
 shape = SubResource("BoxShape3D_5fpw1")
 
-[node name="bowl2" type="StaticBody3D" parent="." groups=["bowls"]]
+[node name="bowl2" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("2_6idk8")
 
 [node name="bowl2mesh" type="MeshInstance3D" parent="bowl2"]
 mesh = SubResource("BoxMesh_bkhtn")
@@ -600,8 +605,9 @@ skeleton = NodePath("../..")
 [node name="bowl2collision" type="CollisionShape3D" parent="bowl2"]
 shape = SubResource("BoxShape3D_jts43")
 
-[node name="bowl3" type="StaticBody3D" parent="." groups=["bowls"]]
+[node name="bowl3" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, 0.9)
+script = ExtResource("3_gaulo")
 
 [node name="bowl3mesh" type="MeshInstance3D" parent="bowl3"]
 mesh = SubResource("BoxMesh_bkhtn")
