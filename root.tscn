@@ -1,9 +1,10 @@
-[gd_scene load_steps=34 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=35 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
 [ext_resource type="Script" path="res://arm.gd" id="1_mq7hl"]
 [ext_resource type="Script" path="res://bowl.gd" id="1_ysd7s"]
 [ext_resource type="Script" path="res://button.gd" id="2_xlyjr"]
+[ext_resource type="Shader" path="res://buttonShader.gdshader" id="5_bryx5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxind"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -523,30 +524,39 @@ _data = {
 height = 0.1
 radius = 0.1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8stb0"]
-albedo_color = Color(1, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_esbg6"]
+render_priority = 0
+shader = ExtResource("5_bryx5")
+shader_parameter/stripe_size = 0.48
+shader_parameter/base_colour = Vector3(1, 0, 0)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ub3f7"]
-material = SubResource("StandardMaterial3D_8stb0")
+material = SubResource("ShaderMaterial_esbg6")
 top_radius = 0.1
 bottom_radius = 0.1
 height = 0.1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukct4"]
-albedo_color = Color(1, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6m42g"]
+render_priority = 0
+shader = ExtResource("5_bryx5")
+shader_parameter/stripe_size = 0.48
+shader_parameter/base_colour = Vector3(1, 0, 0)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_rq8if"]
-material = SubResource("StandardMaterial3D_ukct4")
+material = SubResource("ShaderMaterial_6m42g")
 top_radius = 0.1
 bottom_radius = 0.1
 height = 0.1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3cn7x"]
-albedo_color = Color(1, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_44rt6"]
+render_priority = 0
+shader = ExtResource("5_bryx5")
+shader_parameter/stripe_size = 0.48
+shader_parameter/base_colour = Vector3(1, 0, 0)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ha72p"]
 resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_3cn7x")
+material = SubResource("ShaderMaterial_44rt6")
 top_radius = 0.1
 bottom_radius = 0.1
 height = 0.1
