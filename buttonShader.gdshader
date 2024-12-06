@@ -9,5 +9,5 @@ void vertex() {
 }
 
 void fragment() {
-	ALBEDO.rgb = mix(vec3(1.0), base_colour, round(abs(sin(TIME - COLOR.x - COLOR.z)) + stripe_size));
+	ALBEDO.rgb = mix(vec3(1.0), base_colour, round(abs(sin(TIME - COLOR.x + COLOR.y - COLOR.z)) + stripe_size));
 }
