@@ -1,8 +1,9 @@
-[gd_scene load_steps=35 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=36 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
 [ext_resource type="Script" path="res://arm.gd" id="1_mq7hl"]
 [ext_resource type="Script" path="res://bowl.gd" id="1_ysd7s"]
+[ext_resource type="PackedScene" uid="uid://cljige46tg5uj" path="res://coin_explosion.tscn" id="2_v802p"]
 [ext_resource type="Script" path="res://button.gd" id="2_xlyjr"]
 [ext_resource type="Shader" path="res://buttonShader.gdshader" id="5_bryx5"]
 
@@ -592,6 +593,9 @@ shape = SubResource("BoxShape3D_vgmf0")
 [node name="bowl1" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, -0.9)
 script = ExtResource("1_ysd7s")
+
+[node name="coin explosion" parent="bowl1" instance=ExtResource("2_v802p")]
+transform = Transform3D(-0.995093, 0.0628638, 0.0764032, 0.0638424, 0.997905, 0.0104317, -0.0755875, 0.0152583, -0.997023, 1.69677, 1.0097, 1.6875)
 
 [node name="bowl1mesh" type="MeshInstance3D" parent="bowl1"]
 mesh = SubResource("BoxMesh_bkhtn")
