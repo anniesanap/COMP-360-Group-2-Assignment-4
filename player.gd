@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	# Rotate camera
 	if event is InputEventMouseMotion:
-		camera.rotation.x -= event.screen_relative.y * 0.002
+		camera.rotation.x = clamp(camera.rotation.x - event.screen_relative.y * 0.002, -PI / 2, PI / 2)
 		camera.rotation.y -= event.screen_relative.x * 0.002
 	# Allow mouse to leave window
 	elif event.is_action_pressed("escape"):
