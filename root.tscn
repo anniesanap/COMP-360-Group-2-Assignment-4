@@ -727,6 +727,13 @@ bones/8/scale = Vector3(1, 1, 1)
 mesh = SubResource("ArrayMesh_ao4ja")
 skin = SubResource("Skin_7ub4b")
 
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="arm/Armature/Skeleton3D"]
+bone_name = "ikarmtarget"
+bone_idx = 8
+
+[node name="RayCast3D" type="RayCast3D" parent="arm/Armature/Skeleton3D/BoneAttachment3D"]
+target_position = Vector3(0, 1, 0)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="arm"]
 libraries = {
 "": SubResource("AnimationLibrary_bc72f")
