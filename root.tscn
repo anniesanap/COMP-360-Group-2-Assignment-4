@@ -568,7 +568,7 @@ height = 0.1
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vr53m"]
 shader = ExtResource("7_x1o7q")
 shader_parameter/dither_texture_size = Vector2i(0, 0)
-shader_parameter/r = 0.4
+shader_parameter/r = 0.5
 shader_parameter/num_colours = Vector3(2, 2, 2)
 shader_parameter/dither_texture = ExtResource("8_x6vmd")
 
