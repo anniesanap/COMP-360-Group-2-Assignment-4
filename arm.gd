@@ -15,7 +15,7 @@ func _ready() -> void:
 	animation_player.animation_changed.connect(
 		func(old_animation: String, _new_animation: String) -> void:
 			if old_animation == "grab":
-				var collider: RigidBody3D = null
+				var collider: PhysicsBody3D = null
 				if raycast.is_colliding():
 					collider = raycast.get_collider()
 				if collider.is_in_group("bowls"):
