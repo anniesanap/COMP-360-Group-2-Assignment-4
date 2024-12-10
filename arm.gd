@@ -15,8 +15,17 @@ func _ready() -> void:
 	animation_player.animation_changed.connect(
 		func(old_animation: String, _new_animation: String) -> void:
 			if old_animation == "grab":
-				if raycast.is_colliding() and raycast.get_collider().is_in_group("bowls"):
-					raycast.get_collider().spawn_item()
+				var collider: RigidBody3D = null
+				if raycast.is_colliding():
+					collider = raycast.get_collider()
+				if collider.is_in_group("bowls"):
+					collider.spawn_item()
+				if collider.coin:
+					# Win logic here
+					pass
+				else:
+					# Lose logic here
+					pass
 	)
 
 func arm_grab():
