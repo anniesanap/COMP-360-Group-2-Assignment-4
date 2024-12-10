@@ -1,12 +1,10 @@
-[gd_scene load_steps=45 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=40 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
 [ext_resource type="Script" path="res://arm.gd" id="1_mq7hl"]
 [ext_resource type="Script" path="res://bowl.gd" id="1_ysd7s"]
-[ext_resource type="Shader" path="res://Assets/coin_shader.gdshader" id="2_t8q2t"]
+[ext_resource type="PackedScene" uid="uid://cljige46tg5uj" path="res://coin_explosion.tscn" id="2_v802p"]
 [ext_resource type="Script" path="res://button.gd" id="2_xlyjr"]
-[ext_resource type="Texture2D" uid="uid://d051cqovfi5oo" path="res://Assets/coin.png" id="3_lewg5"]
-[ext_resource type="Script" path="res://coin_explosion.gd" id="4_y37tt"]
 [ext_resource type="Shader" path="res://buttonShader.gdshader" id="5_bryx5"]
 [ext_resource type="Shader" path="res://dither.gdshader" id="7_x1o7q"]
 [ext_resource type="Texture2D" uid="uid://dlfqishbq34t6" path="res://64x64_dither.png" id="8_x6vmd"]
@@ -48,25 +46,6 @@ size = Vector3(0.7, 0.4, 0.7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jts43"]
 size = Vector3(0.7, 0.4, 0.7)
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yyu2x"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ophjx"]
-render_priority = 0
-shader = ExtResource("2_t8q2t")
-shader_parameter/scale_factor = 1.982
-shader_parameter/coin_texture = ExtResource("3_lewg5")
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_biu6t"]
-lightmap_size_hint = Vector2i(3, 1)
-material = SubResource("ShaderMaterial_ophjx")
-add_uv2 = true
-uv2_padding = 0.37
-top_radius = 0.1
-bottom_radius = 0.1
-height = 0.001
-radial_segments = 61
-rings = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2erlp"]
 size = Vector3(0.7, 0.4, 0.7)
@@ -625,6 +604,9 @@ shape = SubResource("BoxShape3D_vgmf0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, -0.9)
 script = ExtResource("1_ysd7s")
 
+[node name="coin explosion" parent="bowl1" instance=ExtResource("2_v802p")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+
 [node name="bowl1mesh" type="MeshInstance3D" parent="bowl1"]
 mesh = SubResource("BoxMesh_bkhtn")
 skeleton = NodePath("../..")
@@ -642,13 +624,6 @@ skeleton = NodePath("../..")
 
 [node name="bowl2collision" type="CollisionShape3D" parent="bowl2"]
 shape = SubResource("BoxShape3D_jts43")
-
-[node name="coin explosion" type="GPUParticles3D" parent="bowl2"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-emitting = false
-process_material = SubResource("ParticleProcessMaterial_yyu2x")
-draw_pass_1 = SubResource("CylinderMesh_biu6t")
-script = ExtResource("4_y37tt")
 
 [node name="bowl3" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, 0.9)
