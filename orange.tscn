@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8jn7ualudsyk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gx6d4"]
+radius = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_aum0o"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="orange" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_gx6d4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_aum0o")
