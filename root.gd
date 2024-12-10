@@ -5,5 +5,9 @@ extends Node3D
 var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
-	var coin_bowl = bowls[rng.randi_range(0, len(bowls) - 1)]
-	coin_bowl.add_child(load("res://coin_explosion.tscn").instantiate())
+	var coin_bowl = rng.randi_range(0, len(bowls) - 1)
+	for bowl in bowls:
+		if bowl == coin_bowl:
+			bowl.add_child(load("res://coin_explosion.tscn").instantiate())
+		else:
+			pass
