@@ -1,10 +1,11 @@
-[gd_scene load_steps=40 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=41 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_5epa4"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
 [ext_resource type="Script" path="res://arm.gd" id="1_mq7hl"]
 [ext_resource type="Script" path="res://bowl.gd" id="1_ysd7s"]
 [ext_resource type="Script" path="res://button.gd" id="2_xlyjr"]
+[ext_resource type="PackedScene" uid="uid://t5hax2alo2c4" path="res://coin_explosion.tscn" id="3_li3ox"]
 [ext_resource type="Shader" path="res://buttonShader.gdshader" id="5_bryx5"]
 [ext_resource type="Shader" path="res://dither.gdshader" id="7_x1o7q"]
 [ext_resource type="Texture2D" uid="uid://dlfqishbq34t6" path="res://64x64_dither.png" id="8_x6vmd"]
@@ -618,6 +619,8 @@ shape = SubResource("ConvexPolygonShape3D_c6bic")
 [node name="collisionTop" type="CollisionShape3D" parent="bowl1"]
 shape = SubResource("ConvexPolygonShape3D_xr2vu")
 
+[node name="coin explosion" parent="bowl1" instance=ExtResource("3_li3ox")]
+
 [node name="bowl2" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_ysd7s")
@@ -635,6 +638,8 @@ shape = SubResource("ConvexPolygonShape3D_c6bic")
 [node name="collisionTop" type="CollisionShape3D" parent="bowl2"]
 shape = SubResource("ConvexPolygonShape3D_xr2vu")
 
+[node name="coin explosion" parent="bowl2" instance=ExtResource("3_li3ox")]
+
 [node name="bowl3" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, 0.9)
 script = ExtResource("1_ysd7s")
@@ -651,6 +656,8 @@ shape = SubResource("ConvexPolygonShape3D_c6bic")
 
 [node name="collisionTop" type="CollisionShape3D" parent="bowl3"]
 shape = SubResource("ConvexPolygonShape3D_xr2vu")
+
+[node name="coin explosion" parent="bowl3" instance=ExtResource("3_li3ox")]
 
 [node name="arm" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.2, 0.8, 0)
@@ -728,6 +735,7 @@ mesh = SubResource("ArrayMesh_ao4ja")
 skin = SubResource("Skin_7ub4b")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="arm/Armature/Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 4, 0)
 bone_name = "ikarmtarget"
 bone_idx = 8
 

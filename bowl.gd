@@ -1,6 +1,7 @@
 extends RigidBody3D
 var initialImpulse: Vector3 = Vector3(0,5,0)
 var object: RigidBody3D = null
+@onready var coin_explosion: GPUParticles3D = $"coin explosion"
 var coin: bool = false
 
 @onready var root = $/root/root
@@ -13,4 +14,4 @@ func spawn_item() -> void:
 	if object.get_parent() == null:
 		root.add_child(object)
 	if coin:
-		add_child(load("res://coin_explosion.tscn").instantiate())
+		coin_explosion.emitting = true

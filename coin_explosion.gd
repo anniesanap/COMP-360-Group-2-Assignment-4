@@ -10,16 +10,12 @@ var spread_angle_min = 0
 var spread_angle_max = 7
 
 func _ready():
-	print("Testing plain particle system...")
-	
 	# Create and assign a ParticleProcessMaterial
 	var particles_material = ParticleProcessMaterial.new()
 	process_material = particles_material
 	
 	# Configure emission shape
 	particles_material.emission_shape = ParticleProcessMaterial.EMISSION_SHAPE_POINT
-	
-
 	
 	# Configure particle properties
 	#particles_material.lifetime = 2.0
@@ -35,6 +31,3 @@ func _ready():
 	#transform.origin = hardcoded_position
 	amount = particle_amount
 	one_shot = true  # Emit particles only once
-	emitting = true  # Start emitting particles
-
-	print("Plain particle test initialized.")
