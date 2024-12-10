@@ -20,12 +20,12 @@ func _ready() -> void:
 					collider = raycast.get_collider()
 				if collider.is_in_group("bowls"):
 					collider.spawn_item()
-				if collider.coin:
-					# Win logic here
-					pass
-				else:
-					# Lose logic here
-					pass
+					if collider.coin:
+						# Win logic here
+						pass
+					else:
+						# Lose logic here
+						pass
 	)
 
 func arm_grab():
