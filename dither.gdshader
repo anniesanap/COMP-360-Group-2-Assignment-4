@@ -9,8 +9,7 @@ uniform float r;
 uniform vec3 num_colours;
 
 void fragment() {
-	vec3 orig_pixel = texture(screen_texture, SCREEN_UV).rgb;
-	
+	vec3 orig_pixel = texelFetch(screen_texture, ivec2(SCREEN_UV / SCREEN_PIXEL_SIZE), 0).rgb;
 	COLOR.rgb = trunc(
 		(orig_pixel + (r * texelFetch(
 			dither_texture,
