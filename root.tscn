@@ -1,9 +1,9 @@
 [gd_scene load_steps=40 format=4 uid="uid://ljd2ods15laa"]
 
+[ext_resource type="Script" path="res://root.gd" id="1_5epa4"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
 [ext_resource type="Script" path="res://arm.gd" id="1_mq7hl"]
 [ext_resource type="Script" path="res://bowl.gd" id="1_ysd7s"]
-[ext_resource type="PackedScene" uid="uid://cljige46tg5uj" path="res://coin_explosion.tscn" id="2_v802p"]
 [ext_resource type="Script" path="res://button.gd" id="2_xlyjr"]
 [ext_resource type="Shader" path="res://buttonShader.gdshader" id="5_bryx5"]
 [ext_resource type="Shader" path="res://dither.gdshader" id="7_x1o7q"]
@@ -573,6 +573,7 @@ shader_parameter/num_colours = Vector3(2, 2, 2)
 shader_parameter/dither_texture = ExtResource("8_x6vmd")
 
 [node name="root" type="Node3D"]
+script = ExtResource("1_5epa4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_j8u35")
@@ -603,9 +604,6 @@ shape = SubResource("BoxShape3D_vgmf0")
 [node name="bowl1" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, -0.9)
 script = ExtResource("1_ysd7s")
-
-[node name="coin explosion" parent="bowl1" instance=ExtResource("2_v802p")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="bowl1mesh" type="MeshInstance3D" parent="bowl1"]
 mesh = SubResource("BoxMesh_bkhtn")
