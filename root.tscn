@@ -41,14 +41,14 @@ size = Vector3(3, 0.8, 3)
 [sub_resource type="BoxMesh" id="BoxMesh_bkhtn"]
 size = Vector3(0.7, 0.4, 0.7)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5fpw1"]
-size = Vector3(0.7, 0.4, 0.7)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7tchg"]
+points = PackedVector3Array(-0.35, 0.2, -0.35, -0.35, -0.2, -0.35, 0.35, -0.2, -0.35, 0.35, 0.2, -0.35)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jts43"]
-size = Vector3(0.7, 0.4, 0.7)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c6bic"]
+points = PackedVector3Array(-0.35, 0.2, 0.35, -0.35, -0.2, 0.35, 0.35, -0.2, 0.35, 0.35, 0.2, 0.35)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2erlp"]
-size = Vector3(0.7, 0.4, 0.7)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xr2vu"]
+points = PackedVector3Array(-0.35, 0.2, 0.35, -0.35, 0.2, -0.35, 0.35, 0.2, 0.35, 0.35, 0.2, -0.35)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n82ij"]
 resource_name = "metal_mat"
@@ -609,8 +609,14 @@ script = ExtResource("1_ysd7s")
 mesh = SubResource("BoxMesh_bkhtn")
 skeleton = NodePath("../..")
 
-[node name="bowl1collision" type="CollisionShape3D" parent="bowl1"]
-shape = SubResource("BoxShape3D_5fpw1")
+[node name="collisionWall" type="CollisionShape3D" parent="bowl1"]
+shape = SubResource("ConvexPolygonShape3D_7tchg")
+
+[node name="collisionWall2" type="CollisionShape3D" parent="bowl1"]
+shape = SubResource("ConvexPolygonShape3D_c6bic")
+
+[node name="collisionTop" type="CollisionShape3D" parent="bowl1"]
+shape = SubResource("ConvexPolygonShape3D_xr2vu")
 
 [node name="bowl2" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -620,8 +626,14 @@ script = ExtResource("1_ysd7s")
 mesh = SubResource("BoxMesh_bkhtn")
 skeleton = NodePath("../..")
 
-[node name="bowl2collision" type="CollisionShape3D" parent="bowl2"]
-shape = SubResource("BoxShape3D_jts43")
+[node name="collisionWall" type="CollisionShape3D" parent="bowl2"]
+shape = SubResource("ConvexPolygonShape3D_7tchg")
+
+[node name="collisionWall2" type="CollisionShape3D" parent="bowl2"]
+shape = SubResource("ConvexPolygonShape3D_c6bic")
+
+[node name="collisionTop" type="CollisionShape3D" parent="bowl2"]
+shape = SubResource("ConvexPolygonShape3D_xr2vu")
 
 [node name="bowl3" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, 0.9)
@@ -631,8 +643,14 @@ script = ExtResource("1_ysd7s")
 mesh = SubResource("BoxMesh_bkhtn")
 skeleton = NodePath("../..")
 
-[node name="bowl3collision" type="CollisionShape3D" parent="bowl3"]
-shape = SubResource("BoxShape3D_2erlp")
+[node name="collisionWall" type="CollisionShape3D" parent="bowl3"]
+shape = SubResource("ConvexPolygonShape3D_7tchg")
+
+[node name="collisionWall2" type="CollisionShape3D" parent="bowl3"]
+shape = SubResource("ConvexPolygonShape3D_c6bic")
+
+[node name="collisionTop" type="CollisionShape3D" parent="bowl3"]
+shape = SubResource("ConvexPolygonShape3D_xr2vu")
 
 [node name="arm" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.2, 0.8, 0)
