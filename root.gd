@@ -16,3 +16,8 @@ func _ready() -> void:
 		object.transform.origin = bowl.global_position
 		object.transform.origin.y = 1.0
 		add_child(object)
+		get_tree().create_timer(1.0).timeout.connect(
+			func() -> void:
+				bowl.object = object
+				remove_child(object)
+		)

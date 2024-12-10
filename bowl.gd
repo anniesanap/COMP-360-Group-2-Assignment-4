@@ -1,5 +1,6 @@
 extends RigidBody3D
-var initialImpulse = Vector3(0,5,0)
+var initialImpulse: Vector3 = Vector3(0,5,0)
+var object: RigidBody3D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
