@@ -9,8 +9,8 @@ func _ready() -> void:
 	for bowl in bowls:
 		var object: RigidBody3D
 		if bowl == bowls[coin_bowl]:
-			bowl.add_child(load("res://coin_explosion.tscn").instantiate())
 			object = load("res://coin.tscn").instantiate()
+			bowl.coin = true
 		else:
 			object = load("res://orange.tscn").instantiate()
 		object.transform.origin = bowl.global_position
