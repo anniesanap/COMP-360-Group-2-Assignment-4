@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=46 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_5epa4"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
@@ -568,6 +568,12 @@ top_radius = 0.1
 bottom_radius = 0.1
 height = 0.1
 
+[sub_resource type="BoxMesh" id="BoxMesh_w227v"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bot40"]
+size = Vector3(1, 2, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vr53m"]
 shader = ExtResource("7_x1o7q")
 shader_parameter/dither_texture_size = Vector2i(0, 0)
@@ -803,6 +809,15 @@ shape = SubResource("CylinderShape3D_bahwf")
 
 [node name="buttonMesh" type="MeshInstance3D" parent="button3"]
 mesh = SubResource("CylinderMesh_ha72p")
+
+[node name="livesCounter" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.6)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="livesCounter"]
+mesh = SubResource("BoxMesh_w227v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="livesCounter"]
+shape = SubResource("BoxShape3D_bot40")
 
 [node name="screenDither" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_vr53m")
