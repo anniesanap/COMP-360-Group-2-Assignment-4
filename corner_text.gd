@@ -6,6 +6,6 @@ extends RichTextLabel
 func _ready() -> void:
 	get_tree().create_timer(7.0).timeout.connect(
 		func() -> void:
-			create_tween().tween_property(self, "modulate:a", 0.0, 1.0)
-			create_tween().tween_property(corner_background, "modulate:a", 0.0, 1.0)
+			create_tween().tween_property(self, "modulate:a", 0.0, 1.0).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+			create_tween().tween_property(corner_background, "modulate:a", 0.0, 1.0).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	)
