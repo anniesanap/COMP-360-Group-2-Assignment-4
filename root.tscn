@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=44 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_5epa4"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dlfqishbq34t6" path="res://64x64_dither.png" id="8_x6vmd"]
 [ext_resource type="Script" path="res://screen_dither.gd" id="9_w574o"]
 [ext_resource type="FontFile" uid="uid://b7gbqdiap2spu" path="res://Assignment4-Regular.otf" id="11_cq1h0"]
+[ext_resource type="Script" path="res://corner_text.gd" id="12_qm80r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxind"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -869,6 +870,7 @@ E    INTERACT
 ESC  MOUSE CAPTURE "
 fit_content = true
 autowrap_mode = 0
+script = ExtResource("12_qm80r")
 
 [node name="cornerBackground" type="ColorRect" parent="ui/cornerText"]
 show_behind_parent = true
