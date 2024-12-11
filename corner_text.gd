@@ -1,11 +1,11 @@
 extends RichTextLabel
 
+@onready var corner_background: ColorRect = $cornerBackground
+@onready var corner_orig_alpha: float = corner_background.modulate.a
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	get_tree().create_timer(7.0).timeout.connect(
+		func() -> void:
+			create_tween().tween_property(self, "modulate:a", 0.0, 1.0)
+			create_tween().tween_property(corner_background, "modulate:a", 0.0, 1.0)
+	)
