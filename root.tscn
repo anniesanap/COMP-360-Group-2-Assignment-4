@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=48 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_5epa4"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://t5hax2alo2c4" path="res://coin_explosion.tscn" id="3_li3ox"]
 [ext_resource type="Shader" path="res://buttonShader.gdshader" id="5_bryx5"]
 [ext_resource type="Shader" path="res://dither.gdshader" id="7_x1o7q"]
+[ext_resource type="Script" path="res://lives_counter.gd" id="8_fr3re"]
 [ext_resource type="Texture2D" uid="uid://dlfqishbq34t6" path="res://64x64_dither.png" id="8_x6vmd"]
 [ext_resource type="Script" path="res://screen_dither.gd" id="9_w574o"]
 [ext_resource type="FontFile" uid="uid://b7gbqdiap2spu" path="res://Assignment4-Regular.otf" id="11_cq1h0"]
@@ -574,6 +575,10 @@ size = Vector3(1, 2, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bot40"]
 size = Vector3(1, 2, 1)
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rnkr7"]
+radius = 0.1
+height = 1.6
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vr53m"]
 shader = ExtResource("7_x1o7q")
 shader_parameter/dither_texture_size = Vector2i(0, 0)
@@ -812,12 +817,17 @@ mesh = SubResource("CylinderMesh_ha72p")
 
 [node name="livesCounter" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.6)
+script = ExtResource("8_fr3re")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="livesCounter"]
 mesh = SubResource("BoxMesh_w227v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="livesCounter"]
 shape = SubResource("BoxShape3D_bot40")
+
+[node name="lifeMeter" type="MeshInstance3D" parent="livesCounter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.2)
+mesh = SubResource("CapsuleMesh_rnkr7")
 
 [node name="screenDither" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_vr53m")
