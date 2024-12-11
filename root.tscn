@@ -580,7 +580,7 @@ size = Vector3(1, 2, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3turx"]
 render_priority = 0
 shader = ExtResource("9_eekud")
-shader_parameter/lives = 1.0
+shader_parameter/lives = 2.0
 shader_parameter/max_lives = 2
 shader_parameter/y_bounds = Vector2(-0.8, 0.8)
 
