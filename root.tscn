@@ -621,6 +621,10 @@ shape = SubResource("ConvexPolygonShape3D_xr2vu")
 
 [node name="coin explosion" parent="bowl1" instance=ExtResource("3_li3ox")]
 
+[node name="Skeleton3D" type="Skeleton3D" parent="bowl1"]
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="bowl1/Skeleton3D"]
+
 [node name="bowl2" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_ysd7s")
