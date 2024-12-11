@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=44 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_5epa4"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
@@ -10,6 +10,8 @@
 [ext_resource type="Shader" path="res://dither.gdshader" id="7_x1o7q"]
 [ext_resource type="Texture2D" uid="uid://dlfqishbq34t6" path="res://64x64_dither.png" id="8_x6vmd"]
 [ext_resource type="Script" path="res://screen_dither.gd" id="9_w574o"]
+[ext_resource type="FontFile" uid="uid://b7gbqdiap2spu" path="res://Assignment4-Regular.otf" id="11_cq1h0"]
+[ext_resource type="Script" path="res://corner_text.gd" id="12_qm80r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxind"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -573,6 +575,10 @@ shader_parameter/r = 0.5
 shader_parameter/num_colours = Vector3(2, 2, 2)
 shader_parameter/dither_texture = ExtResource("8_x6vmd")
 
+[sub_resource type="FontVariation" id="FontVariation_0fuet"]
+base_font = ExtResource("11_cq1h0")
+spacing_glyph = 25
+
 [node name="root" type="Node3D"]
 script = ExtResource("1_5epa4")
 
@@ -798,38 +804,6 @@ shape = SubResource("CylinderShape3D_bahwf")
 [node name="buttonMesh" type="MeshInstance3D" parent="button3"]
 mesh = SubResource("CylinderMesh_ha72p")
 
-[node name="crossHair" type="CenterContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="veritcalSegmentOutline" type="ColorRect" parent="crossHair"]
-custom_minimum_size = Vector2(6, 26)
-layout_mode = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[node name="horizontalSegmentOutline" type="ColorRect" parent="crossHair"]
-custom_minimum_size = Vector2(26, 6)
-layout_mode = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[node name="horizontalSegment" type="ColorRect" parent="crossHair"]
-custom_minimum_size = Vector2(22, 2)
-layout_mode = 2
-mouse_filter = 2
-color = Color(0, 1, 0.439216, 1)
-
-[node name="veritcalSegment" type="ColorRect" parent="crossHair"]
-custom_minimum_size = Vector2(2, 22)
-layout_mode = 2
-mouse_filter = 2
-color = Color(0, 1, 0.439216, 1)
-
 [node name="screenDither" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_vr53m")
 anchors_preset = 15
@@ -839,3 +813,73 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("9_w574o")
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="crossHair" type="CenterContainer" parent="ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="veritcalSegmentOutline" type="ColorRect" parent="ui/crossHair"]
+custom_minimum_size = Vector2(6, 26)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="horizontalSegmentOutline" type="ColorRect" parent="ui/crossHair"]
+custom_minimum_size = Vector2(26, 6)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="horizontalSegment" type="ColorRect" parent="ui/crossHair"]
+custom_minimum_size = Vector2(22, 2)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 1, 0.439216, 1)
+
+[node name="veritcalSegment" type="ColorRect" parent="ui/crossHair"]
+custom_minimum_size = Vector2(2, 22)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 1, 0.439216, 1)
+
+[node name="cornerText" type="RichTextLabel" parent="ui"]
+clip_contents = false
+layout_mode = 1
+offset_right = 390.0
+offset_bottom = 222.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_0fuet")
+theme_override_font_sizes/normal_font_size = 60
+text = "CONTROLS
+WASD MOVEMENT
+E    INTERACT
+ESC  MOUSE CAPTURE "
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("12_qm80r")
+
+[node name="cornerBackground" type="ColorRect" parent="ui/cornerText"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.239216)
