@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var animation_player = $AnimationPlayer
 @onready var raycast = $Armature/Skeleton3D/BoneAttachment3D/RayCast3D
+@onready var joint = $Armature/Skeleton3D/BoneAttachment3D/Generic6DOFJoint3D
 
 var rotating: bool = false
 
@@ -19,6 +20,7 @@ func _ready() -> void:
 				if raycast.is_colliding():
 					collider = raycast.get_collider()
 				if collider.is_in_group("bowls"):
+					#joint.node_b = collider CAUSES ERROR
 					collider.spawn_item()
 					if collider.coin:
 						# Win logic here

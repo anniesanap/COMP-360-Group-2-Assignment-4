@@ -621,10 +621,6 @@ shape = SubResource("ConvexPolygonShape3D_xr2vu")
 
 [node name="coin explosion" parent="bowl1" instance=ExtResource("3_li3ox")]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="bowl1"]
-
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="bowl1/Skeleton3D"]
-
 [node name="bowl2" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_ysd7s")
@@ -745,6 +741,11 @@ bone_idx = 8
 
 [node name="RayCast3D" type="RayCast3D" parent="arm/Armature/Skeleton3D/BoneAttachment3D"]
 target_position = Vector3(0, 1, 0)
+
+[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="arm/Armature/Skeleton3D/BoneAttachment3D"]
+node_a = NodePath("../StaticBody3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="arm/Armature/Skeleton3D/BoneAttachment3D"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="arm"]
 libraries = {
