@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=53 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_5epa4"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dlfqishbq34t6" path="res://64x64_dither.png" id="8_x6vmd"]
 [ext_resource type="Shader" path="res://life_bar.gdshader" id="9_eekud"]
 [ext_resource type="Script" path="res://screen_dither.gd" id="9_w574o"]
+[ext_resource type="Shader" path="res://life_bar_cap.gdshader" id="10_hdd4k"]
 [ext_resource type="FontFile" uid="uid://b7gbqdiap2spu" path="res://Assignment4-Regular.otf" id="11_cq1h0"]
 [ext_resource type="Script" path="res://corner_text.gd" id="12_qm80r"]
 
@@ -580,13 +581,23 @@ size = Vector3(1, 2, 1)
 render_priority = 0
 shader = ExtResource("9_eekud")
 shader_parameter/lives = 2.0
-shader_parameter/max_lives = 3
-shader_parameter/y_bounds = Vector2(-1, 1)
+shader_parameter/max_lives = 2
+shader_parameter/y_bounds = Vector2(-0.8, 0.8)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rnkr7"]
 material = SubResource("ShaderMaterial_3turx")
 radius = 0.1
 height = 1.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qjhjp"]
+render_priority = 0
+shader = ExtResource("10_hdd4k")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_15bcb"]
+material = SubResource("ShaderMaterial_qjhjp")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.001
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vr53m"]
 shader = ExtResource("7_x1o7q")
@@ -837,6 +848,9 @@ shape = SubResource("BoxShape3D_bot40")
 [node name="lifeMeter" type="MeshInstance3D" parent="livesCounter"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.2)
 mesh = SubResource("CapsuleMesh_rnkr7")
+
+[node name="lifeMeterCap" type="MeshInstance3D" parent="livesCounter/lifeMeter"]
+mesh = SubResource("CylinderMesh_15bcb")
 
 [node name="screenDither" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_vr53m")
