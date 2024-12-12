@@ -968,7 +968,8 @@ theme_override_font_sizes/normal_font_size = 60
 text = "CONTROLS
 WASD MOVEMENT
 E    INTERACT
-ESC  MOUSE CAPTURE "
+ESC  MOUSE CAPTURE 
+F1   FULLSCREEN"
 fit_content = true
 autowrap_mode = 0
 script = ExtResource("12_qm80r")

@@ -22,8 +22,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clamp(camera.rotation.x - event.screen_relative.y * 0.002, -PI / 2, PI / 2)
 		camera.rotation.y -= event.screen_relative.x * 0.002
 	# Allow mouse to leave window
-	elif event.is_action_pressed("escape"):
+	elif event.is_action_pressed("escape") and DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
 		DisplayServer.mouse_set_mode(2 * 1 - (int(DisplayServer.mouse_get_mode())))
+	# Toggle fullscreen
+	elif event.is_action_pressed("fullscreen"):
+		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CAPTURED)
+		DisplayServer.window_set_mode(3 - int(DisplayServer.window_get_mode()))
 	# Handle jump
 	elif Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
