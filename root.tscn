@@ -592,6 +592,7 @@ height = 1.6
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qjhjp"]
 render_priority = 0
 shader = ExtResource("10_hdd4k")
+shader_parameter/height = 0.9
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_15bcb"]
 material = SubResource("ShaderMaterial_qjhjp")
@@ -850,6 +851,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.2)
 mesh = SubResource("CapsuleMesh_rnkr7")
 
 [node name="lifeMeterCap" type="MeshInstance3D" parent="livesCounter/lifeMeter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 mesh = SubResource("CylinderMesh_15bcb")
 
 [node name="screenDither" type="ColorRect" parent="."]
