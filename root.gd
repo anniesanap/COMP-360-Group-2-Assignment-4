@@ -67,7 +67,6 @@ func _reset_game(lose: bool = true) -> void:
 		func() -> void:
 			for bowl: RigidBody3D in bowls:
 				bowl.take_item()
-				bowl.remove_collision_exception_with(player)
 			shuffle(0)
 	)
 
