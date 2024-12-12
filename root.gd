@@ -55,7 +55,18 @@ func _reset_game(lose: bool = true) -> void:
 	sun.light_energy = 1.0
 	for button: StaticBody3D in buttons:
 		button.toggle_button(false)
-	get_tree().create_timer(4.0).timeout.connect(shuffle.bind(0))
+	get_tree().create_timer(4.0).timeout.connect(
+		func() -> void:
+			for bowl: RigidBody3D in bowls:
+				bowl.spawn_item()
+				bowl.apply_impulse(bowl.initial_impulse)
+	)
+	get_tree().create_timer(6.0).timeout.connect(
+		func() -> void:
+			for bowl: RigidBody3D in bowls:
+				bowl.take_item()
+			shuffle(0)
+	)
 
 func _lose_game() -> void:
 	arm.animation_player.stop()
@@ -84,5 +95,8 @@ func shuffle(current_round: int) -> void:
 	if current_round < 20:
 		swap_tween.chain().tween_callback(shuffle.bind(current_round + 1))
 	else:
-		for button in buttons:
-			button.toggle_button(true)
+		swap_tween.chain().tween_callback(
+			func() -> void:
+				for button: StaticBody3D in buttons:
+					button.toggle_button(true)
+		)
