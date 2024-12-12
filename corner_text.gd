@@ -3,6 +3,7 @@ extends RichTextLabel
 @onready var corner_background: ColorRect = $cornerBackground
 @onready var corner_orig_alpha: float = corner_background.modulate.a
 
+# Fade out help some time after launch
 func _ready() -> void:
 	get_tree().create_timer(7.0).timeout.connect(
 		func() -> void:

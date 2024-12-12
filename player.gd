@@ -31,6 +31,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Handle jump
 	elif Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	# Interact with objects
 	elif event.is_action_pressed("interact"):
 		if raycast.is_colliding():
 			var collider = raycast.get_collider()

@@ -12,6 +12,7 @@ var set_shader_stripe_opacity: Callable = func(opacity: float): material.set_sha
 var enabled: bool = false
 
 func _ready() -> void:
+	# If arm re-enters idle animation and is pointing at this button, change it back to red
 	arm.animation_player.animation_changed.connect(
 		func(_old_animation: String, new_animation: String) -> void:
 			if new_animation == "idle":
@@ -19,6 +20,7 @@ func _ready() -> void:
 					create_tween().tween_method(set_shader_base_colour, Vector3(0.0, 1.0, 0.0), Vector3(1.0, 0.0, 0.0), 0.2)
 	)
 
+# Disable buttons, rotate arm to this buttons's object, and grab object when player presses button
 func press():
 	if enabled:
 		for button: StaticBody3D in buttons:

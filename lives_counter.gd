@@ -10,6 +10,7 @@ signal game_lost
 @export var lives: float
 @export var max_lives: float
 
+# Change number of lives and change life meter visual to reflect it, emit game_lost if 0 lives left
 func set_lives(new_lives: float, new_max_lives: float = max_lives) -> void:
 	create_tween().tween_method(func(new_value) -> void: bar_shader.set_shader_parameter("lives", new_value), lives, new_lives, 3.0).set_trans(Tween.TRANS_CUBIC)
 	create_tween().tween_method(func(new_value) -> void: cap_shader.set_shader_parameter("lives", new_value), lives, new_lives, 3.0).set_trans(Tween.TRANS_CUBIC)

@@ -54,7 +54,7 @@ func _reset_game() -> void:
 	# Disable buttons
 	for button: StaticBody3D in buttons:
 		button.toggle_button(false)
-	# Launch bowls upwards
+	# Launch bowls upwards to see where each item is
 	get_tree().create_timer(2.5).timeout.connect(
 		func() -> void:
 			for bowl: RigidBody3D in bowls:
@@ -77,7 +77,7 @@ func _lose_game() -> void:
 	for button: StaticBody3D in buttons:
 		button.toggle_button(false)
 
-# Shuffle bowls randomly, up to 20 times with increasing speed
+# Shuffle bowls randomly, up to 20 times recursively with increasing speed, and re-activate buttons at the end
 func shuffle(current_round: int) -> void:
 	if current_round == 0:
 		for bowl: RigidBody3D in bowls:

@@ -12,6 +12,7 @@ signal win
 func _ready() -> void:
 	animation_player.animation_finished.connect(
 		func(animation_name: String) -> void:
+			# Disconnect object from joint and throw if its rigidbody
 			if animation_name == "letgo":
 				var grabbed_object: RigidBody3D = get_node(joint.node_b) if joint.node_b != NodePath("") else null
 				if grabbed_object is RigidBody3D:
@@ -21,6 +22,7 @@ func _ready() -> void:
 						lives_counter.set_lives(min(lives_counter.lives + 1.0, lives_counter.max_lives))
 					else:
 						lives_counter.set_lives(lives_counter.lives - 1.0)
+						# Re-activate buttons after throwing if object is not the correct one
 						for button: StaticBody3D in get_parent_node_3d().buttons:
 							button.toggle_button(true)
 				animation_player.play_backwards("letgo")
@@ -28,6 +30,7 @@ func _ready() -> void:
 	)
 	animation_player.animation_changed.connect(
 		func(old_animation: String, _new_animation: String) -> void:
+			# Attach object to joint if its rigidbody
 			if old_animation == "grab":
 				var collider: PhysicsBody3D
 				if raycast.is_colliding():
@@ -37,6 +40,7 @@ func _ready() -> void:
 						if collider.is_in_group("bowls"):
 							collider.spawn_item()
 			if old_animation == "pickup":
+				# Play particle effects depending on if correct coin bowl is picked
 				var grabbed_object: RigidBody3D = get_node(joint.node_b) if joint.node_b != NodePath("") else null
 				if grabbed_object and grabbed_object.is_in_group("bowls"):
 					if grabbed_object.coin:
@@ -46,6 +50,7 @@ func _ready() -> void:
 						grabbed_object.wrong_bowl.emitting = true
 	)
 
+# Animation sequence
 func arm_grab():
 	animation_player.play("grab")
 	animation_player.queue("pickup")
