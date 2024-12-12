@@ -1,0 +1,1021 @@
+[gd_scene load_steps=10 format=3 uid="uid://de4qi3obsp3ak"]
+
+[ext_resource type="Texture2D" path="res://WINDOW J.png" id="1_7q4er"]
+[ext_resource type="Texture2D" uid="uid://bon8d5nx2xulp" path="res://brick wall.png" id="2_76176"]
+[ext_resource type="Texture2D" uid="uid://hd7cuvf55yas" path="res://door_.png" id="3_eqmvp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbf0k"]
+albedo_texture = ExtResource("1_7q4er")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m3qlf"]
+material = SubResource("StandardMaterial3D_wbf0k")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpxyb"]
+albedo_texture = ExtResource("2_76176")
+
+[sub_resource type="BoxMesh" id="BoxMesh_5cpuh"]
+material = SubResource("StandardMaterial3D_tpxyb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7wqub"]
+albedo_texture = ExtResource("3_eqmvp")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_emt2s"]
+material = SubResource("StandardMaterial3D_7wqub")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WINDOW2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.894424, 1.54704, 5.60204)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("")
+
+[node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2"]
+transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.42892)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("")
+
+[node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW4"]
+transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.31745)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("")
+
+[node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW4/WINDOW4"]
+transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW4/WINDOW4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW5" type="MeshInstance3D" parent="WINDOW2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.45109, -4.89655, 2.38419e-07)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("")
+
+[node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5"]
+transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.42892)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("")
+
+[node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW4"]
+transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.31745)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("")
+
+[node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW4/WINDOW4"]
+transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW4/WINDOW4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW5" type="MeshInstance3D" parent="WINDOW2/WINDOW5"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 3.61887, -6.08096, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("")
+
+[node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5"]
+transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.42892)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("")
+
+[node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5/WINDOW4"]
+transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5/WINDOW4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5/WINDOW4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.31745)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("")
+
+[node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5/WINDOW4/WINDOW4"]
+transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5/WINDOW4/WINDOW4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW6" type="MeshInstance3D" parent="WINDOW2/WINDOW5"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 2.11758e-22, 0, 0, 1, -1.23817, -4.89655, 2.38419e-07)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("")
+
+[node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.42892)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("")
+
+[node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6/WINDOW4"]
+transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6/WINDOW4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6/WINDOW4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.31745)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("")
+
+[node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6/WINDOW4/WINDOW4"]
+transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6/WINDOW4/WINDOW4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
+mesh = SubResource("PlaneMesh_m3qlf")
+skeleton = NodePath("../WINDOW")
+
+[node name="BRICK" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BRICK/BRICK2"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 1.57489, 0.5, -0.525875)
+mesh = SubResource("PlaneMesh_emt2s")
+
+[node name="BRICK3" type="MeshInstance3D" parent="BRICK/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.490173, 5, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4.76837e-07)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK3" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.105656, 5, 4.94725)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4.76837e-07)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK2/BRICK3/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK3" type="MeshInstance3D" parent="BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK4" type="MeshInstance3D" parent="BRICK"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 5)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK3" type="MeshInstance3D" parent="BRICK/BRICK4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK2" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
+
+[node name="BRICK" type="MeshInstance3D" parent="BRICK/BRICK4/BRICK3/BRICK2/BRICK2/BRICK2/BRICK2/BRICK2/BRICK/BRICK/BRICK/BRICK"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_5cpuh")
