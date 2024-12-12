@@ -9,7 +9,7 @@ extends StaticBody3D
 var set_shader_base_colour: Callable = func(colour: Vector3): material.set_shader_parameter("base_colour", colour)
 var set_shader_stripe_opacity: Callable = func(opacity: float): material.set_shader_parameter("stripe_opacity", opacity)
 
-var enabled: bool = true
+var enabled: bool = false
 
 func _ready() -> void:
 	arm.animation_player.animation_changed.connect(
