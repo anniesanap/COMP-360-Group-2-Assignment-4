@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://cevwv1hqxvffg"]
+
+[ext_resource type="Shader" path="res://Assets/thumbs_down.gdshader" id="1_gf0k6"]
+[ext_resource type="Texture2D" uid="uid://hi6wdtpwjm8w" path="res://Assets/thumbs_down.png" id="2_wg8fj"]
+[ext_resource type="Script" path="res://thumbs_down.gd" id="3_mhg6p"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dti2t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g6a1g"]
+render_priority = 0
+shader = ExtResource("1_gf0k6")
+shader_parameter/scale_factor = 2.0
+shader_parameter/thumb_texture = ExtResource("2_wg8fj")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rhms1"]
+material = SubResource("ShaderMaterial_g6a1g")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.001
+
+[node name="thumbs_down" type="GPUParticles3D"]
+transform = Transform3D(-0.118219, -0.992983, -0.00318465, 0.0180849, 0.00105354, -0.999836, 0.992823, -0.118257, 0.0178334, 2.92332, 4.2952, 1.54879)
+process_material = SubResource("ParticleProcessMaterial_dti2t")
+draw_pass_1 = SubResource("CylinderMesh_rhms1")
+script = ExtResource("3_mhg6p")
