@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=56 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_5epa4"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
@@ -41,7 +41,7 @@ material = SubResource("StandardMaterial3D_ovnxw")
 size = Vector2(20, 20)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1nkyd"]
-size = Vector3(3, 0.8, 3)
+size = Vector3(3, 1, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vgmf0"]
 size = Vector3(3, 0.8, 3)
@@ -577,7 +577,7 @@ bottom_radius = 0.1
 height = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_w227v"]
-size = Vector3(1, 2, 1)
+size = Vector3(1, 2.2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bot40"]
 size = Vector3(1, 2, 1)
@@ -641,6 +641,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.4, 0)
 
 [node name="tableMesh" type="MeshInstance3D" parent="table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 mesh = SubResource("BoxMesh_1nkyd")
 skeleton = NodePath("../..")
 
@@ -903,6 +904,7 @@ lives = 3.0
 max_lives = 3.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="livesCounter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 mesh = SubResource("BoxMesh_w227v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="livesCounter"]
