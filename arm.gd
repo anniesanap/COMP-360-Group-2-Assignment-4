@@ -7,6 +7,8 @@ extends Node3D
 
 var rng = RandomNumberGenerator.new()
 
+signal win
+
 var rotating: bool = false
 
 func _ready() -> void:
@@ -17,9 +19,7 @@ func _ready() -> void:
 				if grabbed_object is RigidBody3D:
 					joint.node_b = ""
 					grabbed_object.apply_impulse(Vector3(-10,0,rng.randi_range(-10,10)))
-					if grabbed_object.is_in_group("bowls") and grabbed_object.coin:
-						lives_counter.set_lives(lives_counter.max_lives)
-					else:
+					if grabbed_object.is_in_group("bowls") and not grabbed_object.coin:
 						lives_counter.set_lives(lives_counter.lives - 1.0)
 				animation_player.play_backwards("letgo")
 				animation_player.queue("idle")
@@ -34,6 +34,11 @@ func _ready() -> void:
 						joint.node_b = collider.get_path()
 						if collider.is_in_group("bowls"):
 							collider.spawn_item()
+			if old_animation == "pickup":
+				var grabbed_object: RigidBody3D = get_node(joint.node_b) if joint.node_b != NodePath("") else null
+				if grabbed_object and grabbed_object.is_in_group("bowls") and grabbed_object.coin:
+					grabbed_object.coin_explosion.emitting = true
+					get_tree().create_timer(3.0).timeout.connect(win.emit)
 	)
 
 func arm_grab():

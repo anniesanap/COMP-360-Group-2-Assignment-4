@@ -1,6 +1,8 @@
 extends Node3D
 
+@onready var arm = $arm
 @onready var bowls = [$bowl1, $bowl2, $bowl3]
+@onready var lives_counter = $livesCounter
 
 var rng = RandomNumberGenerator.new()
 
@@ -19,5 +21,14 @@ func _ready() -> void:
 		get_tree().create_timer(1.0).timeout.connect(
 			func() -> void:
 				bowl.object = object
-				remove_child(object)
+				bowl.take_item()
 		)
+	
+	lives_counter.game_lost.connect(_reset_game)
+	arm.win.connect(_reset_game.bind(false))
+
+func _reset_game(lose: bool = true) -> void:
+	for bowl in bowls:
+		bowl.reset()
+	if lose:
+		lives_counter.set_lives(lives_counter.max_lives)
