@@ -682,7 +682,6 @@ shape = SubResource("ConvexPolygonShape3D_xr2vu")
 [node name="coin explosion" parent="bowl1" instance=ExtResource("3_li3ox")]
 
 [node name="thumbs_down" parent="bowl1" instance=ExtResource("4_jt46i")]
-transform = Transform3D(-0.118219, -0.992983, -0.00318465, 0.0180849, 0.00105354, -0.999836, 0.992823, -0.118257, 0.0178334, 0.349532, 1.99793, 0.0170619)
 
 [node name="bowl2" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -718,7 +717,6 @@ shape = SubResource("ConvexPolygonShape3D_xr2vu")
 [node name="coin explosion" parent="bowl2" instance=ExtResource("3_li3ox")]
 
 [node name="thumbs_down" parent="bowl2" instance=ExtResource("4_jt46i")]
-transform = Transform3D(-0.118219, -0.992983, -0.00318465, 0.0180849, 0.00105354, -0.999836, 0.992823, -0.118257, 0.0178334, 0.349532, 1.99793, 0.092804)
 
 [node name="bowl3" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, 0.9)
@@ -754,7 +752,6 @@ shape = SubResource("ConvexPolygonShape3D_xr2vu")
 [node name="coin explosion" parent="bowl3" instance=ExtResource("3_li3ox")]
 
 [node name="thumbs_down" parent="bowl3" instance=ExtResource("4_jt46i")]
-transform = Transform3D(-0.118219, -0.992983, -0.00318465, 0.0180849, 0.00105354, -0.999836, 0.992823, -0.118257, 0.0178334, 0.349532, 1.99793, 0.0567894)
 
 [node name="arm" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.2, 0.8, 0)
