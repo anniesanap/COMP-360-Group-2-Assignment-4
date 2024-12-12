@@ -21,6 +21,8 @@ func _ready() -> void:
 						lives_counter.set_lives(min(lives_counter.lives + 1.0, lives_counter.max_lives))
 					else:
 						lives_counter.set_lives(lives_counter.lives - 1.0)
+						for button: StaticBody3D in get_parent_node_3d().buttons:
+							button.toggle_button(true)
 				animation_player.play_backwards("letgo")
 				animation_player.queue("idle")
 	)

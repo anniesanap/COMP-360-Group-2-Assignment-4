@@ -17,8 +17,13 @@ func take_item() -> void:
 		object.get_parent().remove_child(object)
 
 func reset() -> void:
-	take_item()
 	freeze = true
 	var reset_tween: Tween = create_tween()
 	reset_tween.tween_property(self, "global_transform", initial_transform, 3.0)
-	reset_tween.tween_callback(func() -> void: angular_velocity = Vector3.ZERO; linear_velocity = Vector3.ZERO; freeze = false)
+	reset_tween.tween_callback(
+		func() -> void:
+			angular_velocity = Vector3.ZERO
+			linear_velocity = Vector3.ZERO
+			freeze = false
+			take_item()
+	)

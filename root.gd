@@ -37,8 +37,6 @@ func _reset_game(lose: bool = true) -> void:
 		bowl.reset()
 	if lose:
 		lives_counter.set_lives(lives_counter.max_lives)
-		for button: StaticBody3D in buttons:
-			button.toggle_button(true)
 	environment.environment.background_energy_multiplier = 1.0
 	sun.light_energy = 1.0
 	for button: StaticBody3D in buttons:
@@ -54,8 +52,6 @@ func _lose_game() -> void:
 
 func shuffle(current_round: int) -> void:
 	if current_round == 0:
-		for button: StaticBody3D in buttons:
-			button.toggle_button(false)
 		for bowl: RigidBody3D in bowls:
 			if bowl.object.is_inside_tree():
 				bowl.take_item()

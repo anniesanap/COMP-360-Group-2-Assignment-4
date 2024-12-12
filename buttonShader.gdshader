@@ -1,6 +1,6 @@
 shader_type spatial;
 
-uniform float stripe_opacity = 1.0;
+uniform float stripe_opacity = 0.0;
 uniform vec3 base_colour;
 uniform sampler2D normals: hint_normal_roughness_texture;
 

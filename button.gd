@@ -17,7 +17,6 @@ func _ready() -> void:
 			if new_animation == "idle":
 				if is_equal_approx(arm.rotation.y, arm_rotation):
 					create_tween().tween_method(set_shader_base_colour, Vector3(0.0, 1.0, 0.0), Vector3(1.0, 0.0, 0.0), 0.2)
-				toggle_button(true)
 	)
 
 func press():
