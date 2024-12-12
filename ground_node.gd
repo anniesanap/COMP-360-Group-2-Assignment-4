@@ -6,9 +6,9 @@ func _ready():
 	var st = _quadgrid(20, 20, noise)
 	
 	var material = StandardMaterial3D.new()
-	material.albedo_texture = load("res://Ground078_4K-JPG/Ground078_4K-JPG_Color.jpg")  
-	material.normal_map = load("res://Ground078_4K-JPG/Ground078_4K-JPG_NormalDX.jpg") 
-	material.roughness_texture = load("res://Ground078_4K-JPG/Ground078_4K-JPG_Roughness.jpg")  
+	material.albedo_texture = load("res://Ground078_4K-JPG_Color.jpg")  
+	material.normal_map = load("res://Ground078_4K-JPG_NormalDX.jpg") 
+	material.roughness_texture = load("res://Ground078_4K-JPG_Roughness.jpg")  
 	#Created using Ground 078 from ambientCG.com 
 	#licensed under the Creative Commons CC0 1.0 Universal License.
 	#ambientCG.com/a/Ground078
