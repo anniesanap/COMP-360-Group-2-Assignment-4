@@ -3,16 +3,16 @@ func _ready():
 	print("running")
 	var land = MeshInstance3D.new()
 	var noise = _heightmap(256, 256)
-	var st = _quadgrid(20, 20, noise)
+	var st = _quadgrid(10, 10, noise)
 	
 	var material = StandardMaterial3D.new()
 	material.albedo_texture = load("res://Ground078_4K-JPG_Color.jpg")  
-	material.normal_map = load("res://Ground078_4K-JPG_NormalDX.jpg") 
+	material.normal_texture = load("res://Ground078_4K-JPG_NormalDX.jpg") 
 	material.roughness_texture = load("res://Ground078_4K-JPG_Roughness.jpg")  
 	#Created using Ground 078 from ambientCG.com 
 	#licensed under the Creative Commons CC0 1.0 Universal License.
 	#ambientCG.com/a/Ground078
-	material.uv1_scale = Vector3(20, 20, 1)  # Adjust tiling
+	material.uv1_scale = Vector3(10, 10, 1)  # Adjust tiling
 	
 	st.generate_normals() # normals point perpendicular up from each face
 	var mesh = st.commit() # arranges mesh data structures into arrays for us
@@ -20,10 +20,12 @@ func _ready():
 	land.material_override = material
 	add_child(land)
 	
+	scale = Vector3(2, 1, 2)
+	
 	pass
 
 func _quad(st : SurfaceTool, pt : Vector3, count : Array[int], uvpt: Vector2, uvlen: Vector2, noise):
-	var offset = Vector3(-10, -0.25, -10)
+	var offset = Vector3(-5, -0.5, -5)
 	st.set_uv( Vector2(uvpt[0], uvpt[1]) )
 	st.add_vertex( pt + offset + Vector3(0, (_getHeight(uvpt[0]*(noise.get_height()), uvpt[1]*(noise.get_width()),noise)), 0) ) # vertex 0
 	count[0] += 1
