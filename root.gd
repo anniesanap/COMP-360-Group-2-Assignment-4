@@ -11,6 +11,20 @@ extends Node3D
 var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
+	var old_node = get_node("ground/groundMesh")  
+	var new_node = Node3D.new()
+	new_node.transform = old_node.transform
+	new_node.name = "groundNode"
+	for child in old_node.get_children():
+		child.get_parent().remove_child(child)
+		new_node.add_child(child)             
+	var parent = old_node.get_parent()
+	parent.remove_child(old_node)
+	parent.add_child(new_node)
+	old_node.queue_free()
+	var script = load("res://ground_node.gd")
+	new_node.set_script(script)
+	new_node._ready()
 	var coin_bowl = rng.randi_range(0, len(bowls) - 1)
 	for bowl in bowls:
 		var object: RigidBody3D
