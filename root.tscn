@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=55 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_5epa4"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
@@ -15,6 +15,7 @@
 [ext_resource type="Shader" path="res://life_bar_cap.gdshader" id="10_hdd4k"]
 [ext_resource type="FontFile" uid="uid://b7gbqdiap2spu" path="res://Assignment4-Regular.otf" id="11_cq1h0"]
 [ext_resource type="Script" path="res://corner_text.gd" id="12_qm80r"]
+[ext_resource type="Script" path="res://score.gd" id="16_ti4yw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxind"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -886,6 +887,8 @@ mesh = SubResource("CylinderMesh_ha72p")
 [node name="livesCounter" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.6)
 script = ExtResource("8_fr3re")
+lives = 3.0
+max_lives = 3.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="livesCounter"]
 mesh = SubResource("BoxMesh_w227v")
@@ -971,6 +974,34 @@ autowrap_mode = 0
 script = ExtResource("12_qm80r")
 
 [node name="cornerBackground" type="ColorRect" parent="ui/cornerText"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.239216)
+
+[node name="score" type="RichTextLabel" parent="ui"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_bottom = 59.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_0fuet")
+theme_override_font_sizes/normal_font_size = 60
+text = " 0 "
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("16_ti4yw")
+
+[node name="scoreBackground" type="ColorRect" parent="ui/score"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15

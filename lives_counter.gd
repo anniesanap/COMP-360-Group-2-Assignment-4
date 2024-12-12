@@ -7,8 +7,8 @@ extends StaticBody3D
 
 signal game_lost
 
-var lives: float = 2.0
-var max_lives: float = 2.0
+@export var lives: float
+@export var max_lives: float
 
 func set_lives(new_lives: float, new_max_lives: float = max_lives) -> void:
 	create_tween().tween_method(func(new_value) -> void: bar_shader.set_shader_parameter("lives", new_value), lives, new_lives, 3.0).set_trans(Tween.TRANS_CUBIC)

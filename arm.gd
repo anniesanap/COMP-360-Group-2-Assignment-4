@@ -19,7 +19,9 @@ func _ready() -> void:
 				if grabbed_object is RigidBody3D:
 					joint.node_b = ""
 					grabbed_object.apply_impulse(Vector3(-10,0,rng.randi_range(-10,10)))
-					if grabbed_object.is_in_group("bowls") and not grabbed_object.coin:
+					if grabbed_object.is_in_group("bowls") and grabbed_object.coin:
+						lives_counter.set_lives(min(lives_counter.lives + 1.0, lives_counter.max_lives))
+					else:
 						lives_counter.set_lives(lives_counter.lives - 1.0)
 				animation_player.play_backwards("letgo")
 				animation_player.queue("idle")
