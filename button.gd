@@ -24,6 +24,9 @@ func press():
 		for button in buttons:
 			create_tween().tween_method(button.set_shader_stripe_opacity, 1.0, 0.0, 0.1)
 		create_tween().tween_method(set_shader_base_colour, Vector3(1.0, 0.0, 0.0), Vector3(0.0, 1.0, 0.0), 0.2)
+		var press_tween: Tween = create_tween()
+		press_tween.tween_property(self, "position:y", position.y - 0.02, 0.1).set_trans(Tween.TRANS_BOUNCE)
+		press_tween.tween_property(self, "position:y", position.y, 0.1).set_trans(Tween.TRANS_BOUNCE)
 		var rotate_tween = create_tween()
 		rotate_tween.tween_property(arm, "rotation:y", arm_rotation, abs(arm.rotation.y - arm_rotation) / (PI / 4)).set_delay(0.5).set_trans(Tween.TRANS_SPRING)
 		rotate_tween.finished.connect(arm.arm_grab)
