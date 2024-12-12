@@ -1,5 +1,6 @@
 extends Node3D
 
+@onready var lives_counter: StaticBody3D = $".."/livesCounter
 @onready var animation_player = $AnimationPlayer
 @onready var raycast = $Armature/Skeleton3D/BoneAttachment3D/RayCast3D
 @onready var joint = $Armature/Skeleton3D/BoneAttachment3D/Generic6DOFJoint3D
@@ -16,13 +17,10 @@ func _ready() -> void:
 				if grabbed_object is RigidBody3D:
 					joint.node_b = ""
 					grabbed_object.apply_impulse(Vector3(-10,0,rng.randi_range(-10,10)))
-					if grabbed_object.is_in_group("bowls"):
-						if grabbed_object.coin:
-							# Win logic here
-							pass
-						else:
-							# Lose logic here
-							pass
+					if grabbed_object.is_in_group("bowls") and grabbed_object.coin:
+						lives_counter.set_lives(lives_counter.max_lives)
+					else:
+						lives_counter.set_lives(lives_counter.lives - 1.0)
 				animation_player.play_backwards("letgo")
 				animation_player.queue("idle")
 	)
