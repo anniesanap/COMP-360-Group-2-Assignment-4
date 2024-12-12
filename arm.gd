@@ -9,8 +9,6 @@ var rng = RandomNumberGenerator.new()
 
 signal win
 
-var rotating: bool = false
-
 func _ready() -> void:
 	animation_player.animation_finished.connect(
 		func(animation_name: String) -> void:
@@ -45,6 +43,5 @@ func _ready() -> void:
 
 func arm_grab():
 	animation_player.play("grab")
-	rotating = false
 	animation_player.queue("pickup")
 	animation_player.queue("letgo")

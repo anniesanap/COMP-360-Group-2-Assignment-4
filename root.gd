@@ -1,9 +1,11 @@
 extends Node3D
 
-@onready var arm = $arm
-@onready var bowls = [$bowl1, $bowl2, $bowl3]
-@onready var lives_counter = $livesCounter
-@onready var score_counter = $ui/score
+@onready var arm: Node3D = $arm
+@onready var bowls: Array[RigidBody3D] = [$bowl1, $bowl2, $bowl3]
+@onready var lives_counter: StaticBody3D = $livesCounter
+@onready var score_counter: RichTextLabel = $ui/score
+@onready var sun: DirectionalLight3D = $DirectionalLight3D
+@onready var environment: WorldEnvironment = $WorldEnvironment
 
 var rng = RandomNumberGenerator.new()
 
@@ -24,7 +26,7 @@ func _ready() -> void:
 				bowl.object = object
 				bowl.take_item()
 		)
-	lives_counter.game_lost.connect(_reset_game)
+	lives_counter.game_lost.connect(_lose_game)
 	arm.win.connect(_reset_game.bind(false))
 	arm.win.connect(score_counter.add_score)
 
@@ -33,3 +35,10 @@ func _reset_game(lose: bool = true) -> void:
 		bowl.reset()
 	if lose:
 		lives_counter.set_lives(lives_counter.max_lives)
+	environment.environment.background_energy_multiplier = 1.0
+	sun.light_energy = 1.0
+
+func _lose_game() -> void:
+	arm.animation_player.stop()
+	sun.light_energy = 0.0
+	environment.environment.background_energy_multiplier = 0.1
