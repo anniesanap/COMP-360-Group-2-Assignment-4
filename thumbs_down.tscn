@@ -19,7 +19,8 @@ bottom_radius = 0.3
 height = 0.001
 
 [node name="thumbs_down" type="GPUParticles3D"]
-transform = Transform3D(-0.118219, -0.992983, -0.00318465, 0.0180849, 0.00105354, -0.999836, 0.992823, -0.118257, 0.0178334, 2.92332, 4.2952, 1.54879)
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 0, 0, 0)
+emitting = false
 process_material = SubResource("ParticleProcessMaterial_dti2t")
 draw_pass_1 = SubResource("CylinderMesh_rhms1")
 script = ExtResource("3_mhg6p")

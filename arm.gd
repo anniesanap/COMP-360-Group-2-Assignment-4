@@ -38,9 +38,12 @@ func _ready() -> void:
 							collider.spawn_item()
 			if old_animation == "pickup":
 				var grabbed_object: RigidBody3D = get_node(joint.node_b) if joint.node_b != NodePath("") else null
-				if grabbed_object and grabbed_object.is_in_group("bowls") and grabbed_object.coin:
-					grabbed_object.coin_explosion.emitting = true
-					get_tree().create_timer(3.0).timeout.connect(win.emit)
+				if grabbed_object and grabbed_object.is_in_group("bowls"):
+					if grabbed_object.coin:
+						grabbed_object.coin_explosion.emitting = true
+						get_tree().create_timer(3.0).timeout.connect(win.emit)
+					elif not grabbed_object.coin:
+						grabbed_object.wrong_bowl.emitting = true
 	)
 
 func arm_grab():

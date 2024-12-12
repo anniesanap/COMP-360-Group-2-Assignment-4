@@ -2,6 +2,7 @@ extends RigidBody3D
 var initial_impulse: Vector3 = Vector3(0,7,0)
 var object: RigidBody3D = null
 @onready var coin_explosion: GPUParticles3D = $"coin explosion"
+@onready var wrong_bowl: GPUParticles3D = $"thumbs_down"
 var coin: bool = false
 @onready var initial_transform: Transform3D = global_transform
 

@@ -1,14 +1,13 @@
 extends Node3D
 func _ready():
-	print("running")
 	var land = MeshInstance3D.new()
 	var noise = _heightmap(256, 256)
 	var st = _quadgrid(10, 10, noise)
 	
 	var material = StandardMaterial3D.new()
-	material.albedo_texture = load("res://Ground078_4K-JPG_Color.jpg")  
-	material.normal_texture = load("res://Ground078_4K-JPG_NormalDX.jpg") 
-	material.roughness_texture = load("res://Ground078_4K-JPG_Roughness.jpg")  
+	material.albedo_texture = load("res://Ground078_4K-JPG_Color.jpg")
+	material.normal_texture = load("res://Ground078_4K-JPG_NormalDX.jpg")
+	material.roughness_texture = load("res://Ground078_4K-JPG_Roughness.jpg")
 	#Created using Ground 078 from ambientCG.com 
 	#licensed under the Creative Commons CC0 1.0 Universal License.
 	#ambientCG.com/a/Ground078
@@ -21,8 +20,6 @@ func _ready():
 	add_child(land)
 	
 	scale = Vector3(2, 1, 2)
-	
-	pass
 
 func _quad(st : SurfaceTool, pt : Vector3, count : Array[int], uvpt: Vector2, uvlen: Vector2, noise):
 	var offset = Vector3(-5, -0.5, -5)
@@ -46,8 +43,6 @@ func _quad(st : SurfaceTool, pt : Vector3, count : Array[int], uvpt: Vector2, uv
 	st.add_index(count[0] - 4) # make the second triangle
 	st.add_index(count[0] - 2)
 	st.add_index(count[0] - 1)
-	
-	pass
 
 func _heightmap(x: int, y: int) -> Image:
 # return image of noise with dimensions (x, y)
