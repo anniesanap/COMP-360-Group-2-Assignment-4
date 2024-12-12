@@ -581,7 +581,7 @@ size = Vector3(1, 2, 1)
 render_priority = 0
 shader = ExtResource("9_eekud")
 shader_parameter/lives = 2.0
-shader_parameter/max_lives = 2
+shader_parameter/max_lives = 2.0
 shader_parameter/y_bounds = Vector2(-0.8, 0.8)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rnkr7"]
@@ -592,7 +592,9 @@ height = 1.6
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qjhjp"]
 render_priority = 0
 shader = ExtResource("10_hdd4k")
-shader_parameter/height = 0.9
+shader_parameter/lives = 2.0
+shader_parameter/max_lives = 2.0
+shader_parameter/y_bounds = Vector2(-0.8, 0.8)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_15bcb"]
 material = SubResource("ShaderMaterial_qjhjp")
