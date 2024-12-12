@@ -24,8 +24,7 @@ func reset() -> void:
 	reset_tween.tween_property(self, "global_transform", initial_transform, 3.0)
 	reset_tween.tween_callback(
 		func() -> void:
-			object.transform.origin = global_position
-			object.rotation = Vector3.ZERO
+			object.transform = global_transform
 			object.angular_velocity = Vector3.ZERO
 			object.linear_velocity = Vector3.ZERO
 			angular_velocity = Vector3.ZERO
