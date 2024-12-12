@@ -20,10 +20,16 @@ func _ready() -> void:
 				if raycast.is_colliding():
 					collider = raycast.get_collider()
 				if collider.is_in_group("bowls"):
-					#joint.node_b = collider CAUSES ERROR
+					joint.node_b = collider.get_path()
 					collider.spawn_item()
+					#TODO Wait for pick up animation
+					#Disconnect bowl
+					#TODO reenable
+					##joint.node_b = ""
+					##collider._throw()
 					if collider.coin:
 						# Win logic here
+						
 						pass
 					else:
 						# Lose logic here
