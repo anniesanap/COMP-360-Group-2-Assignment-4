@@ -4,6 +4,7 @@ extends Node3D
 @onready var animation_player = $AnimationPlayer
 @onready var raycast = $Armature/Skeleton3D/BoneAttachment3D/RayCast3D
 @onready var joint = $Armature/Skeleton3D/BoneAttachment3D/Generic6DOFJoint3D
+@onready var player = $".."/player
 
 var rng = RandomNumberGenerator.new()
 
@@ -48,6 +49,8 @@ func _ready() -> void:
 						get_tree().create_timer(3.0).timeout.connect(win.emit)
 					elif not grabbed_object.coin:
 						grabbed_object.wrong_bowl.emitting = true
+						# Throw orange at player
+						grabbed_object.object.apply_impulse((player.global_position - grabbed_object.object.global_position + Vector3.UP).normalized() * 10)
 	)
 
 # Animation sequence
