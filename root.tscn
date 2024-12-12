@@ -1002,7 +1002,11 @@ text = "CONTROLS
 WASD MOVEMENT
 E    INTERACT
 ESC  MOUSE CAPTURE 
-F1   FULLSCREEN"
+F1   FULLSCREEN
+
+INTERACT WITH BOWLS 
+TO RESET THEM IF
+THEY GET MOVED"
 fit_content = true
 autowrap_mode = 0
 script = ExtResource("12_qm80r")
