@@ -683,6 +683,14 @@ shape = SubResource("ConvexPolygonShape3D_xr2vu")
 
 [node name="thumbs_down" parent="bowl1" instance=ExtResource("4_jt46i")]
 
+[node name="collisionWall3" type="CollisionShape3D" parent="bowl1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_7tchg")
+
+[node name="collisionWall4" type="CollisionShape3D" parent="bowl1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_7tchg")
+
 [node name="bowl2" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_ysd7s")
@@ -718,6 +726,14 @@ shape = SubResource("ConvexPolygonShape3D_xr2vu")
 
 [node name="thumbs_down" parent="bowl2" instance=ExtResource("4_jt46i")]
 
+[node name="collisionWall3" type="CollisionShape3D" parent="bowl2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_7tchg")
+
+[node name="collisionWall4" type="CollisionShape3D" parent="bowl2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_7tchg")
+
 [node name="bowl3" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, 0.9)
 script = ExtResource("1_ysd7s")
@@ -752,6 +768,14 @@ shape = SubResource("ConvexPolygonShape3D_xr2vu")
 [node name="coin explosion" parent="bowl3" instance=ExtResource("3_li3ox")]
 
 [node name="thumbs_down" parent="bowl3" instance=ExtResource("4_jt46i")]
+
+[node name="collisionWall3" type="CollisionShape3D" parent="bowl3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_7tchg")
+
+[node name="collisionWall4" type="CollisionShape3D" parent="bowl3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_7tchg")
 
 [node name="arm" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.2, 0.8, 0)
@@ -858,7 +882,7 @@ shape = SubResource("CapsuleShape3D_k3m8v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="playerRaycast" type="RayCast3D" parent="player/playerCamera"]
-target_position = Vector3(0, 0, -1.5)
+target_position = Vector3(0, 0, -2)
 
 [node name="button1" type="StaticBody3D" parent="." groups=["bowls", "buttons"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.85, -0.9)

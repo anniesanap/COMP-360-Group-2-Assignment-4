@@ -7,6 +7,7 @@ extends Node3D
 @onready var score_counter: RichTextLabel = $ui/score
 @onready var sun: DirectionalLight3D = $DirectionalLight3D
 @onready var environment: WorldEnvironment = $WorldEnvironment
+@onready var player: CharacterBody3D = $player
 
 var rng = RandomNumberGenerator.new()
 
@@ -27,6 +28,7 @@ func _ready() -> void:
 	new_node._ready()
 	var coin_bowl = rng.randi_range(0, len(bowls) - 1)
 	for bowl in bowls:
+		bowl.add_collision_exception_with(player)
 		var object: RigidBody3D
 		if bowl == bowls[coin_bowl]:
 			object = load("res://coin.tscn").instantiate()
@@ -44,7 +46,7 @@ func _ready() -> void:
 	lives_counter.game_lost.connect(_lose_game)
 	arm.win.connect(_reset_game.bind(false))
 	arm.win.connect(score_counter.add_score)
-	get_tree().create_timer(2.0).timeout.connect(shuffle.bind(0))
+	_reset_game()
 
 func _reset_game(lose: bool = true) -> void:
 	for bowl in bowls:
@@ -55,16 +57,17 @@ func _reset_game(lose: bool = true) -> void:
 	sun.light_energy = 1.0
 	for button: StaticBody3D in buttons:
 		button.toggle_button(false)
-	get_tree().create_timer(4.0).timeout.connect(
+	get_tree().create_timer(2.5).timeout.connect(
 		func() -> void:
 			for bowl: RigidBody3D in bowls:
 				bowl.spawn_item()
 				bowl.apply_impulse(bowl.initial_impulse)
 	)
-	get_tree().create_timer(6.0).timeout.connect(
+	get_tree().create_timer(4.5).timeout.connect(
 		func() -> void:
 			for bowl: RigidBody3D in bowls:
 				bowl.take_item()
+				bowl.remove_collision_exception_with(player)
 			shuffle(0)
 	)
 
@@ -97,6 +100,9 @@ func shuffle(current_round: int) -> void:
 	else:
 		swap_tween.chain().tween_callback(
 			func() -> void:
+				for bowl: RigidBody3D in bowls:
+					bowl.remove_collision_exception_with(player)
+					bowl.initial_transform = bowl.transform
 				for button: StaticBody3D in buttons:
 					button.toggle_button(true)
 		)

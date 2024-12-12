@@ -32,9 +32,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	elif event.is_action_pressed("interact"):
-		var collider = raycast.get_collider()
-		if raycast.get_collider() != null and collider.is_in_group("buttons"):
-			collider.press()
+		if raycast.is_colliding():
+			var collider = raycast.get_collider()
+			if collider != null:
+				if collider.is_in_group("buttons"):
+					collider.press()
+				elif collider.is_in_group("bowls") and not collider.object.is_inside_tree():
+					collider.reset()
+			
 	# Handle movement keys
 	var movement = Input.get_vector("move_left", "move_right", "move_forward", "move_back").rotated(-camera.rotation.y)
 	velocity.x = -movement.y * SPEED
