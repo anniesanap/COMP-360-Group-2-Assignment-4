@@ -7,6 +7,7 @@ extends StaticBody3D
 @onready var buttons: Array[StaticBody3D] = [$".."/button1, $".."/button2, $".."/button3]
 
 var set_shader_base_colour: Callable = func(colour: Vector3): material.set_shader_parameter("base_colour", colour)
+var set_shader_stripe_opacity: Callable = func(opacity: float): material.set_shader_parameter("stripe_opacity", opacity)
 
 func _ready() -> void:
 	arm.animation_player.animation_changed.connect(
@@ -14,7 +15,7 @@ func _ready() -> void:
 			if new_animation == "idle":
 				if is_equal_approx(arm.rotation.y, arm_rotation):
 					create_tween().tween_method(set_shader_base_colour, Vector3(0.0, 1.0, 0.0), Vector3(1.0, 0.0, 0.0), 0.2)
-				create_tween().tween_method(func(opacity: float): material.set_shader_parameter("stripe_opacity", opacity), 0.0, 1.0, 0.1)
+				create_tween().tween_method(set_shader_stripe_opacity, 0.0, 1.0, 0.1)
 	)
 
 func press():
