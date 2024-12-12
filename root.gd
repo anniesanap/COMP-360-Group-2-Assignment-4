@@ -12,23 +12,18 @@ extends Node3D
 var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
-	var old_node = get_node("ground/groundMesh")  
-	var new_node = Node3D.new()
+	# Generate ground planes
+	var old_node: MeshInstance3D = get_node("ground/groundMesh")  
+	var new_node: Node3D = Node3D.new()
 	new_node.transform = old_node.transform
-	new_node.name = "groundNode"
-	for child in old_node.get_children():
-		child.get_parent().remove_child(child)
-		new_node.add_child(child)             
-	var parent = old_node.get_parent()
-	parent.remove_child(old_node)
-	parent.add_child(new_node)
+	new_node.name = "groundNode"    
+	new_node.set_script(load("res://ground_node.gd"))
+	old_node.replace_by(new_node)
 	old_node.queue_free()
-	var script = load("res://ground_node.gd")
-	new_node.set_script(script)
-	new_node._ready()
+	
+	# Choose random bowl to put coin under
 	var coin_bowl = rng.randi_range(0, len(bowls) - 1)
 	for bowl in bowls:
-		bowl.add_collision_exception_with(player)
 		var object: RigidBody3D
 		if bowl == bowls[coin_bowl]:
 			object = load("res://coin.tscn").instantiate()
@@ -38,31 +33,35 @@ func _ready() -> void:
 		object.transform.origin = bowl.global_position
 		object.transform.origin.y = 1.0
 		add_child(object)
-		get_tree().create_timer(2.0).timeout.connect(
-			func() -> void:
-				bowl.object = object
-				bowl.take_item()
-		)
+		bowl.object = object
+	
+	# Connect signals
 	lives_counter.game_lost.connect(_lose_game)
-	arm.win.connect(_reset_game.bind(false))
+	arm.win.connect(_reset_game)
 	arm.win.connect(score_counter.add_score)
+	
 	_reset_game()
 
-func _reset_game(lose: bool = true) -> void:
+# Move bowls to start position and shuffle them
+func _reset_game() -> void:
 	for bowl in bowls:
+		bowl.add_collision_exception_with(player)
+		# Reset position and item position
 		bowl.reset()
-	if lose:
-		lives_counter.set_lives(lives_counter.max_lives)
+	
 	environment.environment.background_energy_multiplier = 1.0
 	sun.light_energy = 1.0
+	# Disable buttons
 	for button: StaticBody3D in buttons:
 		button.toggle_button(false)
+	# Launch bowls upwards
 	get_tree().create_timer(2.5).timeout.connect(
 		func() -> void:
 			for bowl: RigidBody3D in bowls:
 				bowl.spawn_item()
 				bowl.apply_impulse(bowl.initial_impulse)
 	)
+	# Remove item under bowls from tree, and then shuffle
 	get_tree().create_timer(4.5).timeout.connect(
 		func() -> void:
 			for bowl: RigidBody3D in bowls:
@@ -70,6 +69,7 @@ func _reset_game(lose: bool = true) -> void:
 			shuffle(0)
 	)
 
+# Animation sequence to play when no lives left
 func _lose_game() -> void:
 	arm.animation_player.stop()
 	sun.light_energy = 0.0
@@ -77,6 +77,7 @@ func _lose_game() -> void:
 	for button: StaticBody3D in buttons:
 		button.toggle_button(false)
 
+# Shuffle bowls randomly, up to 20 times with increasing speed
 func shuffle(current_round: int) -> void:
 	if current_round == 0:
 		for bowl: RigidBody3D in bowls:

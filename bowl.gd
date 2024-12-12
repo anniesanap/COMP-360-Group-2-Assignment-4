@@ -5,7 +5,6 @@ var object: RigidBody3D = null
 @onready var wrong_bowl: GPUParticles3D = $"thumbs_down"
 var coin: bool = false
 @onready var initial_transform: Transform3D = global_transform
-@onready var player: CharacterBody3D = $".."/player
 
 func spawn_item() -> void:
 	if object.get_parent() == null:
@@ -23,7 +22,6 @@ func reset() -> void:
 	reset_tween.tween_property(self, "global_transform", initial_transform, 2.0).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 	reset_tween.tween_callback(
 		func() -> void:
-			add_collision_exception_with(player)
 			angular_velocity = Vector3.ZERO
 			linear_velocity = Vector3.ZERO
 			take_item()
