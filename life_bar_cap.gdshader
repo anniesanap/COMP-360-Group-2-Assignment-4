@@ -8,7 +8,7 @@ void vertex() {
 	COLOR.r = mix(0.0, 1.0, 0.33 - (((y_bounds.y - y_bounds.x) * (lives / max_lives)) - ((y_bounds.y - y_bounds.x) / 2.0)));
 	COLOR.g = mix(0.0, 1.0, 0.33 + (((y_bounds.y - y_bounds.x) * (lives / max_lives)) - ((y_bounds.y - y_bounds.x) / 2.0)));
 	COLOR.b = 0.0;
-	VERTEX.y -= abs(sin(TIME - (VERTEX.z * 5.0))) * 0.015;
+	VERTEX.y += sin(TIME - (VERTEX.z * 5.0)) * 0.015;
 	UV = VERTEX.xz;
 }
 
