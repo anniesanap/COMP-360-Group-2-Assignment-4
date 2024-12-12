@@ -11,3 +11,5 @@
 * OSD
 * Physics:
   * Launch orange at player
+* Textures:
+  * Coin texture
