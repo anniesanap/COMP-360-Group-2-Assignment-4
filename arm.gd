@@ -4,36 +4,38 @@ extends Node3D
 @onready var raycast = $Armature/Skeleton3D/BoneAttachment3D/RayCast3D
 @onready var joint = $Armature/Skeleton3D/BoneAttachment3D/Generic6DOFJoint3D
 
+var rng = RandomNumberGenerator.new()
+
 var rotating: bool = false
 
 func _ready() -> void:
 	animation_player.animation_finished.connect(
 		func(animation_name: String) -> void:
 			if animation_name == "letgo":
+				var grabbed_object: RigidBody3D = get_node(joint.node_b) if joint.node_b != NodePath("") else null
+				if grabbed_object is RigidBody3D:
+					joint.node_b = ""
+					grabbed_object.apply_impulse(Vector3(-10,0,rng.randi_range(-10,10)))
+					if grabbed_object.is_in_group("bowls"):
+						if grabbed_object.coin:
+							# Win logic here
+							pass
+						else:
+							# Lose logic here
+							pass
 				animation_player.play_backwards("letgo")
 				animation_player.queue("idle")
 	)
 	animation_player.animation_changed.connect(
 		func(old_animation: String, _new_animation: String) -> void:
 			if old_animation == "grab":
-				var collider: PhysicsBody3D = null
+				var collider: PhysicsBody3D
 				if raycast.is_colliding():
 					collider = raycast.get_collider()
-				if collider.is_in_group("bowls"):
-					joint.node_b = collider.get_path()
-					collider.spawn_item()
-					#TODO Wait for pick up animation
-					#Disconnect bowl
-					#TODO reenable
-					##joint.node_b = ""
-					##collider._throw()
-					if collider.coin:
-						# Win logic here
-						
-						pass
-					else:
-						# Lose logic here
-						pass
+					if collider is RigidBody3D:
+						joint.node_b = collider.get_path()
+						if collider.is_in_group("bowls"):
+							collider.spawn_item()
 	)
 
 func arm_grab():
