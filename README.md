@@ -45,3 +45,6 @@
 
 ### Taylor Young 300191437
 * Custom font creation
+
+### Navraj Sohal 300196729
+* Created a building using MeshInstance3D with brick textures
