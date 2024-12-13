@@ -34,6 +34,14 @@
   * Bowl capability of being grabbed
 * Testing:
   * Physics testing
+ 
+ 
+### Ambarish Sharma 300192621
+ * Textures:
+   * Added checkerboard shader for tableMesh(MeshInstance3d)
+   * Added material shader to tableMesh
+   * Added grass shader as the texture for the ground(MeshInstance3d)
+   * Added gradient color texture for livescounter(MeshInstance3d)
 
 ### Taylor Young 300191437
 * Custom font creation
