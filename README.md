@@ -54,3 +54,7 @@
 * Worked on the shader for coins
 * Created thumbs down rain (losing animation)
 * Worked on the shader for the thumbs_down image
+
+### Safia Singla 300200357
+* Workeed on the ground landscape using Fast Noise Lite
+* Added the ground texture to groundMesh3D (overwritten)
