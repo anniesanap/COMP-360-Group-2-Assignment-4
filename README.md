@@ -15,3 +15,5 @@
   * Launch orange at player
 * Textures:
   * Coin texture
+* Comments
+* Fixes
