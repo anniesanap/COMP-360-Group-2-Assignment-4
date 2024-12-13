@@ -48,3 +48,9 @@
 
 ### Navraj Sohal 300196729
 * Created a building using MeshInstance3D with brick textures
+
+### Ananya Sanap 300192396
+* Created coin explosion (winning animation)
+* Worked on the shader for coins
+* Created thumbs down rain (losing animation)
+* Worked on the shader for the thumbs_down image
