@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://eyhhfe2pvrod"]
+
+[ext_resource type="Shader" path="res://LivesCounterShader.gdshader" id="1_uggqy"]
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_uggqy")
+shader_parameter/low_lives_color = Vector3(1, 0, 0)
+shader_parameter/full_lives_color = Vector3(0, 1, 0)
+shader_parameter/gradient_scale = 5.0
