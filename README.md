@@ -19,3 +19,14 @@
 * Animations (aside from arm animations)
 * Comments
 * Fixes
+
+### Grant Gilbert 300153121
+* Game logic:
+  * Bowl throwing logic
+  * Bowl position reset logic
+* Physics:
+  * Bowl physics
+  * Bowl collision
+  * Bowl capability of being grabbed
+* Testing:
+  * Physics testing
