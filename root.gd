@@ -13,13 +13,12 @@ var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	# Generate ground planes
-	var old_node: MeshInstance3D = get_node("ground/groundMesh")  
 	var new_node: Node3D = Node3D.new()
-	new_node.transform = old_node.transform
+	new_node.transform = get_node("ground/groundMesh").transform
+	new_node.transform.origin += Vector3(0.0, 0.4, 0.0)
 	new_node.name = "groundNode"    
 	new_node.set_script(load("res://ground_node.gd"))
-	old_node.replace_by(new_node)
-	old_node.queue_free()
+	$ground.add_child(new_node)
 	
 	# Choose random bowl to put coin under
 	var coin_bowl = rng.randi_range(0, len(bowls) - 1)
@@ -49,6 +48,7 @@ func _reset_game() -> void:
 		# Reset position and item position
 		bowl.reset()
 	
+	arm.animation_player.play("idle")
 	environment.environment.background_energy_multiplier = 1.0
 	sun.light_energy = 1.0
 	# Disable buttons

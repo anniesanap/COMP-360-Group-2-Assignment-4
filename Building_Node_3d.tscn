@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://de4qi3obsp3ak"]
 
-[ext_resource type="Texture2D" path="res://WINDOW J.png" id="1_7q4er"]
+[ext_resource type="Texture2D" uid="uid://cprr8dow46758" path="res://WINDOW J.png" id="1_7q4er"]
 [ext_resource type="Texture2D" uid="uid://bon8d5nx2xulp" path="res://brick wall.png" id="2_76176"]
 [ext_resource type="Texture2D" uid="uid://hd7cuvf55yas" path="res://door_.png" id="3_eqmvp"]
 
@@ -33,172 +33,163 @@ skeleton = NodePath("")
 [node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2"]
 transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
 
 [node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
 
 [node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.42892)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("")
 
 [node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW4"]
 transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
 
 [node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
 
 [node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.31745)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("")
 
 [node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW4/WINDOW4"]
 transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
 
 [node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW4/WINDOW4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
 
 [node name="WINDOW5" type="MeshInstance3D" parent="WINDOW2"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.45109, -4.89655, 2.38419e-07)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("")
 
 [node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5"]
 transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../..")
 
 [node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../..")
 
 [node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.42892)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("")
+skeleton = NodePath("../../../..")
 
 [node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW4"]
 transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../..")
 
 [node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../..")
 
 [node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.31745)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("")
+skeleton = NodePath("../../../../..")
 
 [node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW4/WINDOW4"]
 transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../../..")
 
 [node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW4/WINDOW4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../../..")
 
 [node name="WINDOW5" type="MeshInstance3D" parent="WINDOW2/WINDOW5"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 3.61887, -6.08096, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("")
+skeleton = NodePath("../../../..")
 
 [node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5"]
 transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../..")
 
 [node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../..")
 
 [node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.42892)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("")
+skeleton = NodePath("../../../../..")
 
 [node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5/WINDOW4"]
 transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../../..")
 
 [node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5/WINDOW4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../../..")
 
 [node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5/WINDOW4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.31745)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("")
+skeleton = NodePath("../../../../../..")
 
 [node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5/WINDOW4/WINDOW4"]
 transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../../../..")
 
 [node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW5/WINDOW4/WINDOW4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../../../..")
 
 [node name="WINDOW6" type="MeshInstance3D" parent="WINDOW2/WINDOW5"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 2.11758e-22, 0, 0, 1, -1.23817, -4.89655, 2.38419e-07)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("")
+skeleton = NodePath("../../../..")
 
 [node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../..")
 
 [node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.42892)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("")
+skeleton = NodePath("../../../../..")
 
 [node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6/WINDOW4"]
 transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../../..")
 
 [node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6/WINDOW4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../../..")
 
 [node name="WINDOW4" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6/WINDOW4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.31745)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("")
+skeleton = NodePath("../../../../../..")
 
 [node name="WINDOW2" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6/WINDOW4/WINDOW4"]
 transform = Transform3D(1, 8.74228e-08, 8.75443e-08, -8.74228e-08, 1, 8.74228e-08, -8.75443e-08, -8.74228e-08, 1, 1.81261, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../../../..")
 
 [node name="WINDOW3" type="MeshInstance3D" parent="WINDOW2/WINDOW5/WINDOW6/WINDOW4/WINDOW4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50899, 0, 0)
 mesh = SubResource("PlaneMesh_m3qlf")
-skeleton = NodePath("../WINDOW")
+skeleton = NodePath("../../../../../../..")
 
 [node name="BRICK" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
