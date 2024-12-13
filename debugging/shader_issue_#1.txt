@@ -1,0 +1,3 @@
+(Kaleb)
+
+While working on the shader for the life meter, I had an issue with finding the correct equation for the radius of the cap. At the top and bottom of the main capsule, there are hemispheres. At first I put the wrong equation, and then after I realized I couldn't figure out the equation for the radius of a slice of a hemisphere given the height. Eventually I found an equation that worked well enough for this purpose (shader_issue_#1_fixed.png), but it's not the optimal equation.
