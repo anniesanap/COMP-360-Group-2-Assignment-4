@@ -5,8 +5,9 @@
   * Screen-shader
   * Gradient shader with wavy liquid top on meter
   * Shine and colour shader on buttons
-* Game logic:
+* Game logic, including:
   * Lives system
+  * Shuffling
   * Arm animation logic
 * Greyboxing
 * Player controls
