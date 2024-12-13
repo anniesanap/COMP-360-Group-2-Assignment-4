@@ -16,5 +16,6 @@
 * Textures & models:
   * Coin texture
   * Bowl models
+* Animations (aside from arm animations)
 * Comments
 * Fixes
