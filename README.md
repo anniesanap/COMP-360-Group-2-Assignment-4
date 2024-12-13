@@ -13,7 +13,8 @@
 * OSD
 * Physics:
   * Launch orange at player
-* Textures:
+* Textures & models:
   * Coin texture
+  * Bowl models
 * Comments
 * Fixes
