@@ -6,9 +6,11 @@
   * Gradient shader with wavy liquid top on meter
   * Shine and colour shader on buttons
 * Game logic, including:
+  * Button logic
   * Lives system
   * Shuffling
   * Arm animation logic
+  * Points system
 * Greyboxing
 * Player controls
 * OSD
