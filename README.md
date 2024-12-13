@@ -19,6 +19,7 @@
 * Animations (aside from arm animations)
 * Comments
 * Fixes
+* Kanban board management
 
 ### Grant Gilbert 300153121
 * Game logic:
