@@ -2,7 +2,7 @@ extends MeshInstance3D
 
 func _ready():
 	# Load the shader
-	var lives_shader = load("res://path/to/livescounter_shader.gdshader")
+	var lives_shader = load("res://path/to/LivesCounterShader.gdshader")
 	if lives_shader:
 		# Create a ShaderMaterial and assign the shader
 		var lives_material = ShaderMaterial.new()
