@@ -13,13 +13,6 @@ Resources used:
      - Notes- (Add license deatills)
 
 
- 3) Audio
-     - Resouce Name
-     - File path-
-     - Source-
-     - Notes- (Add license deatills)
-
-
  4) Shaders
      - Resouce Name: Thumbs down png image (Used on the cylindrical mesh for the coin explosion) (texture part of shaders)
      - File path- res://Assets/thumbs_down.png 
