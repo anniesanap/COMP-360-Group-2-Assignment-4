@@ -54,7 +54,7 @@ func _ready() -> void:
 					elif not grabbed_object.coin:
 						grabbed_object.wrong_bowl.emitting = true
 						# Throw orange at player
-						grabbed_object.object.apply_impulse((player.global_position - grabbed_object.object.global_position + Vector3.UP).normalized() * 10)
+						grabbed_object.object.apply_impulse((player.global_position - grabbed_object.object.global_position + Vector3.UP).normalized() * 7)
 	)
 
 # Animation sequence
