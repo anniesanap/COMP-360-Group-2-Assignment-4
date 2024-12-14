@@ -1,8 +1,13 @@
 # COMP 360 Assignment 4
 
+## Instructions:
+* Download the .exe and .pck files in the same folder and run the .exe to play the game.
+
 ## Links:
 https://github.com/perfectwing1236/COMP-360-Group-2-Assignment-4
 https://github.com/users/perfectwing1236/projects/4/views/1
+
+## Contributions:
 
 ### Kaleb Reid 300184418
 * Post-processing:
@@ -28,6 +33,7 @@ https://github.com/users/perfectwing1236/projects/4/views/1
 * Comments
 * Fixes
 * Kanban board management
+* Demonstration Video
 
 ### Grant Gilbert 300153121
 * Game logic:
@@ -39,6 +45,8 @@ https://github.com/users/perfectwing1236/projects/4/views/1
   * Bowl capability of being grabbed
 * Testing:
   * Physics testing
+* Bugfixing
+* Kanban Board management
  
  
 ### Ambarish Sharma 300192621
