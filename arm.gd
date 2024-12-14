@@ -20,12 +20,16 @@ func _ready() -> void:
 					joint.node_b = ""
 					grabbed_object.apply_impulse(Vector3(-10,0,rng.randi_range(-10,10)))
 					if grabbed_object.is_in_group("bowls") and grabbed_object.coin:
-						lives_counter.set_lives(min(lives_counter.lives + 1.0, lives_counter.max_lives))
+						pass
+						#lives_counter.set_lives(min(lives_counter.lives + 1.0, lives_counter.max_lives))
 					else:
 						lives_counter.set_lives(lives_counter.lives - 1.0)
 						# Re-activate buttons after throwing if object is not the correct one
 						for button: StaticBody3D in get_parent_node_3d().buttons:
 							button.toggle_button(true)
+					# Turn all buttons red
+					for button: StaticBody3D in get_parent_node_3d().buttons:
+						create_tween().tween_method(button.set_shader_base_colour, button.material.get_shader_parameter("base_colour"), Vector3(1.0, 0.0, 0.0), 0.2)
 				animation_player.play_backwards("letgo")
 				animation_player.queue("idle")
 	)
