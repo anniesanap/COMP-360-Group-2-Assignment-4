@@ -23,7 +23,7 @@ https://github.com/users/perfectwing1236/projects/4/views/1
   * Launch orange at player
 * Textures & models:
   * Coin texture
-  * Orange / coin / bowl / table models
+  * Orange / coin / bowl / table / life meter models
 * Animations (aside from arm animations)
 * Comments
 * Fixes
@@ -46,7 +46,6 @@ https://github.com/users/perfectwing1236/projects/4/views/1
    * Added checkerboard shader for tableMesh(MeshInstance3d)
    * Added material shader to tableMesh
    * Added gradient color texture for livescounter(MeshInstance3d)
-   * Created LICENSES.md
    * Created RESOURCES.md
 
 ### Taylor Young 300191437
