@@ -1,9 +1,10 @@
-[gd_scene load_steps=57 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=59 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_5epa4"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
 [ext_resource type="Script" path="res://arm.gd" id="1_mq7hl"]
 [ext_resource type="Script" path="res://bowl.gd" id="1_ysd7s"]
+[ext_resource type="Script" path="res://table_texture.gd" id="2_4be6x"]
 [ext_resource type="Script" path="res://button.gd" id="2_xlyjr"]
 [ext_resource type="PackedScene" uid="uid://t5hax2alo2c4" path="res://coin_explosion.tscn" id="3_li3ox"]
 [ext_resource type="PackedScene" uid="uid://cevwv1hqxvffg" path="res://thumbs_down.tscn" id="4_jt46i"]
@@ -14,11 +15,11 @@
 [ext_resource type="Shader" path="res://life_bar.gdshader" id="9_eekud"]
 [ext_resource type="Script" path="res://screen_dither.gd" id="9_w574o"]
 [ext_resource type="Shader" path="res://life_bar_cap.gdshader" id="10_hdd4k"]
+[ext_resource type="Script" path="res://lives_counter_texture.gd" id="11_a4c15"]
 [ext_resource type="FontFile" uid="uid://b7gbqdiap2spu" path="res://Assignment4-Regular.otf" id="11_cq1h0"]
 [ext_resource type="Script" path="res://corner_text.gd" id="12_qm80r"]
 [ext_resource type="Script" path="res://score.gd" id="16_ti4yw"]
 [ext_resource type="PackedScene" uid="uid://de4qi3obsp3ak" path="res://Building_Node_3d.tscn" id="18_5ug31"]
-       
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxind"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -647,9 +648,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.4, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 mesh = SubResource("BoxMesh_1nkyd")
 skeleton = NodePath("../..")
+script = ExtResource("2_4be6x")
 
 [node name="tableCollision" type="CollisionShape3D" parent="table"]
-shape = SubResource("BoxShape3D_vgmf0")  
+shape = SubResource("BoxShape3D_vgmf0")
 
 [node name="bowl1" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, -0.9)
@@ -928,6 +930,7 @@ max_lives = 3.0
 [node name="MeshInstance3D" type="MeshInstance3D" parent="livesCounter"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 mesh = SubResource("BoxMesh_w227v")
+script = ExtResource("11_a4c15")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="livesCounter"]
 shape = SubResource("BoxShape3D_bot40")
