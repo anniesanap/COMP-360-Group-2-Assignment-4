@@ -11,4 +11,10 @@ Licenses
       - License used-
  
    5) Shaders
-       - License used-
+      
+      Thumb down image
+       - License used- Public Domain (No attribution required, but crediting the source is appreciated)
+         
+      Coin image
+       - License used- Vecteezy Free License (Attribution required)
+       - Attribution text: "Gold Coins Symbol PNG by Vecteezy"

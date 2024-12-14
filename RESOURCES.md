@@ -21,10 +21,16 @@ Resources used:
 
 
  4) Shaders
- - Resouce Name
-     - File path-
-     - Source-
-     - Notes- (Add license deatills)
+     - Resouce Name: Thumbs down png image (Used on the cylindrical mesh for the coin explosion) (texture part of shaders)
+     - File path- res://Assets/thumbs_down.png 
+     - Source- https://publicdomainvectors.org/en/free-clipart/Vector-drawing-of-thumbs-down-in-a-red-circle/22738.html
+     - Notes- No attribution required, but crediting the source is appreciated.
+    
+     - Resouce Name: coin png image (Used on the cylidrical (coin shaped) mesh for the losing animation) (texture part of shaders)
+     - File path- res://Assets/coin.png 
+     - Source- https://www.vecteezy.com/png/19051642-gold-coins-symbol
+     - Notes- Licensed under Vecteezy's Free License. Attribution is required.  
+     - Attribution text: "Gold Coins Symbol PNG by Vecteezy"
 
 
 - For resources used from- https://ambientcg.com/
