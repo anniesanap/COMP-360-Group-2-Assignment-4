@@ -18,6 +18,10 @@
 [ext_resource type="Script" path="res://corner_text.gd" id="12_qm80r"]
 [ext_resource type="Script" path="res://score.gd" id="16_ti4yw"]
 [ext_resource type="PackedScene" uid="uid://de4qi3obsp3ak" path="res://Building_Node_3d.tscn" id="18_5ug31"]
+[ext_resource type="Script" path="res://lives_counter_texture.gd" id="22_lives_script"]
+[ext_resource type="Script" path="res://table_texture.gd" id="23_table_script"]
+[ext_resource type="Shader" path="res://LivesCounterShader.gdshader" id="24_lshader"] 
+[ext_resource type="Shader" path="res://checker_board.gdshader" id="25_cshader"]        
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxind"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -650,6 +654,10 @@ skeleton = NodePath("../..")
 [node name="tableCollision" type="CollisionShape3D" parent="table"]
 shape = SubResource("BoxShape3D_vgmf0")
 
+[node name="Table" type="MeshInstance3D" parent="table"]
+script = ExtResource(23_table_script)
+material_override = ExtResource(25_cshader)  
+
 [node name="bowl1" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, -0.9)
 script = ExtResource("1_ysd7s")
@@ -927,6 +935,11 @@ max_lives = 3.0
 [node name="MeshInstance3D" type="MeshInstance3D" parent="livesCounter"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 mesh = SubResource("BoxMesh_w227v")
+
+[node name="LivesCounterMesh" type="MeshInstance3D" parent="livesCounter"]
+script = ExtResource(22_lives_script)
+material_override = ExtResource(24_lshader) 
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2.7)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="livesCounter"]
 shape = SubResource("BoxShape3D_bot40")
