@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://ljd2ods15laa"]
+[gd_scene load_steps=64 format=4 uid="uid://ljd2ods15laa"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_5epa4"]
 [ext_resource type="Script" path="res://player.gd" id="1_k2jet"]
@@ -42,10 +42,17 @@ material = SubResource("StandardMaterial3D_ovnxw")
 size = Vector2(200, 200)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1nkyd"]
-size = Vector3(3, 1, 3)
+size = Vector3(3, 0.1, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vgmf0"]
 size = Vector3(3, 0.8, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rafd8"]
+albedo_color = Color(0.500947, 0.377845, 0.247749, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uio45"]
+material = SubResource("StandardMaterial3D_rafd8")
+size = Vector3(0.1, 1.2, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74jd8"]
 albedo_color = Color(0.479607, 0.357041, 2.88785e-07, 1)
@@ -608,6 +615,24 @@ top_radius = 0.1
 bottom_radius = 0.1
 height = 0.001
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wuko"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u7qjy"]
+material = SubResource("StandardMaterial3D_3wuko")
+size = Vector2(0.03, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hugyx"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gxpx0"]
+material = SubResource("StandardMaterial3D_hugyx")
+size = Vector2(0.03, 0.15)
+
+[sub_resource type="FontVariation" id="FontVariation_s52xo"]
+base_font = ExtResource("11_cq1h0")
+spacing_glyph = 40
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vr53m"]
 shader = ExtResource("7_x1o7q")
 shader_parameter/dither_texture_size = Vector2i(0, 0)
@@ -643,12 +668,28 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.4, 0)
 
 [node name="tableMesh" type="MeshInstance3D" parent="table"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
 mesh = SubResource("BoxMesh_1nkyd")
 skeleton = NodePath("../..")
 
 [node name="tableCollision" type="CollisionShape3D" parent="table"]
 shape = SubResource("BoxShape3D_vgmf0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24443, -0.3, -1.04486)
+mesh = SubResource("BoxMesh_uio45")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24443, -0.3, 1.05514)
+mesh = SubResource("BoxMesh_uio45")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05557, -0.3, -1.04486)
+mesh = SubResource("BoxMesh_uio45")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05557, -0.3, 1.05514)
+mesh = SubResource("BoxMesh_uio45")
 
 [node name="bowl1" type="RigidBody3D" parent="." groups=["bowls"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1, -0.9)
@@ -939,6 +980,49 @@ mesh = SubResource("CapsuleMesh_rnkr7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 mesh = SubResource("CylinderMesh_15bcb")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="livesCounter"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.51, 0.4, 0.02)
+mesh = SubResource("PlaneMesh_u7qjy")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="livesCounter"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.51, 0.6, 0.02)
+mesh = SubResource("PlaneMesh_u7qjy")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="livesCounter"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.51, 0.2, 0.02)
+mesh = SubResource("PlaneMesh_u7qjy")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="livesCounter"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.51, -0.2, 0.02)
+mesh = SubResource("PlaneMesh_u7qjy")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="livesCounter"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.51, -0.4, 0.02)
+mesh = SubResource("PlaneMesh_u7qjy")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="livesCounter"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.51, -0.6, 0.02)
+mesh = SubResource("PlaneMesh_u7qjy")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="livesCounter"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.51, 0, -0.005)
+mesh = SubResource("PlaneMesh_gxpx0")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="livesCounter"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.51, 0.8, -0.00500011)
+mesh = SubResource("PlaneMesh_gxpx0")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="livesCounter"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.51, -0.8, -0.00500011)
+mesh = SubResource("PlaneMesh_gxpx0")
+
+[node name="Label3D" type="Label3D" parent="livesCounter"]
+transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, -0.51, -0.1, -0.3)
+modulate = Color(0, 0, 0, 1)
+text = "LIFE"
+font = SubResource("FontVariation_s52xo")
+font_size = 100
+
 [node name="screenDither" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_vr53m")
 anchors_preset = 15
@@ -1102,3 +1186,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.5629, -0.5, 57.9804)
 
 [node name="building4" parent="." instance=ExtResource("18_5ug31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.681, -1.2, -22.3598)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
