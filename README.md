@@ -15,6 +15,7 @@ https://github.com/users/perfectwing1236/projects/4/views/1
   * Shuffling
   * Arm animation logic
   * Points system
+  * Losing sequence
 * Greyboxing
 * Player controls
 * OSD
@@ -22,7 +23,7 @@ https://github.com/users/perfectwing1236/projects/4/views/1
   * Launch orange at player
 * Textures & models:
   * Coin texture
-  * Bowl models
+  * Orange / coin / bowl / table models
 * Animations (aside from arm animations)
 * Comments
 * Fixes

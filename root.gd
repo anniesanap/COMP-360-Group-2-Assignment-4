@@ -8,6 +8,7 @@ extends Node3D
 @onready var sun: DirectionalLight3D = $DirectionalLight3D
 @onready var environment: WorldEnvironment = $WorldEnvironment
 @onready var player: CharacterBody3D = $player
+@onready var lose_text: RichTextLabel = $ui/loseText
 
 var rng = RandomNumberGenerator.new()
 
@@ -76,8 +77,22 @@ func _lose_game() -> void:
 	environment.environment.background_energy_multiplier = 0.1
 	for button: StaticBody3D in buttons:
 		button.toggle_button(false)
+	get_tree().create_timer(5.0).timeout.connect(
+		func() -> void:
+			player.velocity.y = 500
+			lose_text.visible = true
+			get_tree().create_timer(7.0).timeout.connect(
+				func() -> void:
+					score_counter.reset_score()
+					lose_text.visible = false
+					player.global_position = Vector3(-3, 1, 0)
+					_reset_game()
+					player.velocity.y = 0.0
+					lives_counter.set_lives(lives_counter.max_lives, lives_counter.max_lives)
+			)
+	)
 
-# Shuffle bowls randomly, up to 20 times recursively with increasing speed, and re-activate buttons at the end
+# Shuffle bowls randomly, up to 17 times recursively with increasing speed, and re-activate buttons at the end
 func shuffle(current_round: int) -> void:
 	if current_round == 0:
 		for bowl: RigidBody3D in bowls:
@@ -91,11 +106,11 @@ func shuffle(current_round: int) -> void:
 	var bowl_2_orig_position: Vector3 = bowls[bowl_2].global_position
 	var swap_tween: Tween = create_tween()
 	swap_tween.set_parallel()
-	swap_tween.tween_property(bowls[bowl_1], "global_position", bowl_2_orig_position, 3 / float(current_round + 4)).set_trans(Tween.TRANS_CUBIC)
-	swap_tween.tween_property(bowls[bowl_2], "global_position", bowl_1_orig_position, 3 / float(current_round + 4)).set_trans(Tween.TRANS_CUBIC)
+	swap_tween.tween_property(bowls[bowl_1], "global_position", bowl_2_orig_position, 4 / float(current_round + 6)).set_trans(Tween.TRANS_CUBIC)
+	swap_tween.tween_property(bowls[bowl_2], "global_position", bowl_1_orig_position, 4 / float(current_round + 6)).set_trans(Tween.TRANS_CUBIC)
 	swap_tween.chain().tween_callback(func() -> void: bowls[bowl_1].object.transform.origin = bowl_2_orig_position)
 	swap_tween.tween_callback(func() -> void: bowls[bowl_2].object.transform.origin = bowl_1_orig_position)
-	if current_round < 20:
+	if current_round < 17:
 		swap_tween.chain().tween_callback(shuffle.bind(current_round + 1))
 	else:
 		swap_tween.chain().tween_callback(
