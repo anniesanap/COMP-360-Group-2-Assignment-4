@@ -1,5 +1,9 @@
 # COMP 360 Assignment 4
 
+## Links:
+https://github.com/perfectwing1236/COMP-360-Group-2-Assignment-4
+https://github.com/users/perfectwing1236/projects/4/views/1
+
 ### Kaleb Reid 300184418
 * Post-processing:
   * Screen-shader
