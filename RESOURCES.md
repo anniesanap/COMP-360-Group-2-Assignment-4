@@ -1,10 +1,9 @@
 Resources used:
 
 1) Textures
-   - Resouce Name
-     - File path-
-     - Source-
-     - Notes- (Add license deatills)
+   - Resouce Name: Painted Cinderblocks Brick Wall - PBR0497 (Used for Brick Building using a set of MeshInstance3D)
+     - Source- https://www.textures.com/download/painted-cinderblocks-brick-wall-pbr0497/138719
+     - Notes- This texture was taken from textures.com under fair use. Textures.com, Copyright © 2005 - 2024
 
  
  2) Models
