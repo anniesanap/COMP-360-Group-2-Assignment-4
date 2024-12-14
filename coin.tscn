@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://kfiqqem4uem"]
+[gd_scene load_steps=4 format=3 uid="uid://kfiqqem4uem"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xgnx5"]
 height = 0.05
 radius = 0.1
 
-[sub_resource type="BoxMesh" id="BoxMesh_tu6xm"]
-size = Vector3(0.2, 0.05, 0.2)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xydub"]
+albedo_color = Color(0.618259, 0.504087, 0.272812, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ylylu"]
+material = SubResource("StandardMaterial3D_xydub")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.05
 
 [node name="coin" type="RigidBody3D"]
 
@@ -13,4 +19,4 @@ size = Vector3(0.2, 0.05, 0.2)
 shape = SubResource("CylinderShape3D_xgnx5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_tu6xm")
+mesh = SubResource("CylinderMesh_ylylu")
